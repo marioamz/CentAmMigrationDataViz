@@ -148,7 +148,7 @@ rm(to_plot_final, to_plot_f, to_plot_econ, to_plot_unsafe, unsafe, econ, unsafe.
 plot <- ggplot(to_plot_ff, 
        aes(y = perc_aoj11, x = perc_idio2)) + 
          geom_point(aes(color=as.factor(prov), size=perc_emigrate)) +
-         geom_text(aes(label=prov)) + scale_size(range=c(0, 20))
+         geom_text(aes(label=prov)) + scale_color_discrete(guide=FALSE) + scale_size_continuous(range=c(0,20), name='% Planning to Emigrate')
 
 plot + labs(title = "Plans to emigrate based on perceptions of violence and economic opportunity (2017)",
             subtitle = "In Honduran provinces with largest percentage of people planning to emigrate, economic concerns prevail",
@@ -159,8 +159,9 @@ plot + labs(title = "Plans to emigrate based on perceptions of violence and econ
               plot.subtitle = element_text(color="black", size=12, face="italic", hjust=0.5),
               axis.title.x = element_text(color="black", size=10),
               axis.title.y = element_text(color="black", size=10),
-              plot.caption = element_text(color="black", size=8, face="italic")) 
-              
+              plot.caption = element_text(color="black", size=8, face="italic"),
+              legend.justification = c(1, 1), 
+              legend.position = c(1, 1))
 
 ggsave('EconAndViolenceEmigration.pdf', path="Visualizations/", width=8, height=11, units='in')
 
