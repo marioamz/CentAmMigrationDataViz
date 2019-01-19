@@ -66,7 +66,7 @@ plot + labs(title = "Percent who plan to emigrate in the next three years",
               axis.title.y = element_text(color="black", size=10),
               plot.caption = element_text(color="black", size=8, face="italic"))
 
-ggsave('EmigrationAcrossCountries.pdf', path="Visualizations/", width=8, height=11, units='in')
+ggsave('EmigrationAcrossCountries.pdf', path="Visualizations/", width=9, height=9, units='in')
 
 rm(new, f)
 
@@ -163,7 +163,7 @@ plot + labs(title = "Plans to emigrate based on perceptions of violence and econ
               legend.justification = c(1, 1), 
               legend.position = c(1, 1))
 
-ggsave('EconAndViolenceEmigration.pdf', path="Visualizations/", width=8, height=11, units='in')
+ggsave('EconAndViolenceEmigration.pdf', path="Visualizations/", width=9, height=9, units='in')
 
 rm(emigrate, emigrate.na, hond2017, to_plot_emigrate, to_plot_ff)
 
@@ -195,5 +195,5 @@ plot + scale_y_continuous(name = "Amount (in 10,000,000)", labels = c(0, 2,
                axis.title.y = element_text(color="black", size=10),
                plot.caption = element_text(color="black", size=8, face="italic"))
 
-ggsave('USaidHonduras.pdf', path="Visualizations/", width=8, height=11, units='in')
+ggsave('USaidHonduras.pdf', path="Visualizations/", width=9, height=9, units='in')
 
