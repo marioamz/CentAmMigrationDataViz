@@ -1,22 +1,25 @@
 ---
-title: "Central American Migration"
+title: "The Changing Dynamics of Central American Migration"
 author: "Mario Moreno"
 date: "1/27/2019"
 output:
-  pdf_document: default
   html_document:
     code_folding: hide
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
+chooseCRANmirror(graphics=FALSE, ind=1)
 knitr::opts_chunk$set(echo = TRUE)
 ```
-```{r packsandlibs, include=FALSE}
+```{r packsandlibs, include=FALSE, warning=FALSE}
+install.packages('rmarkdown')
+install.packages('knitr')
 install.packages('ggplot2')
 install.packages('tidyverse')
 install.packages('gghighlight')
 install.packages('ggalluvial')
-install.packages('rmarkdown')
+
 
 library(ggalluvial)
 library(ggplot2)
@@ -124,9 +127,9 @@ slopegraph <- do.call("rbind", list(e2014, e2015, e2016, e2017, h2014, h2015, h2
 rm(e2014, e2015, e2016, e2017, h2014, h2015, h2016, h2017, g2014, g2015, g2016, g2017)
 ```
 
-# The Changing Dynamics of Central American Migration
+In the midst of a raging national debate on migration and refugees, plenty has been written about the changing profile of undocumented migrants reaching the US-Mexico border. While traditionally, Mexican migrants have been the predominant demographic group seeking to enter the United States through the southern border, that dynamic has shifted in the last decade. Central American migrants originating in the Northern Triangle countries of El Salvador, Guatemala, and El Salvador have become the predominant demographic of undocumented migrants seeking to enter the United States. 
 
-```{r refugees}
+```{r refugees, warning=FALSE}
 # Calulcate the percent of people who've considered emigration over time
 
 new <- LAPOP %>%
@@ -162,8 +165,11 @@ plot + labs(title = "More people are planning to emigrate \n from Honduras than 
 rm(new, f, plot)
 ```
 
-## What's driving the migration (violence or economic opportunity?)
-```{r drivers}
+As evidenced by the graph above, this surge in Central American migration is evident in the percentage of citizens of Central Americans countries who are planning to emigrate in the next three years. Notably, in all three countries, the percentage of citizens planning to emigrate has considerably increased since 2012 -- with the percentage of Hondurans planning to make the trip out of the country rising from 12% in 2012 to 40% in 2016. 
+
+Media outlets and researchers often cite a range of push and pull factors driving this emigration. Generally speaking, violence and lack of economic opportunity are cited as two prominent push factors; while family reunification is often cited as a pull factor. 
+
+```{r drivers, warning=FALSE}
 ## This graph will show perceptions in violence and economic opportunity
 ## relative to answers on willingness to emigrate in the next 3 years for 2017
 
@@ -230,7 +236,7 @@ to_plot_final <- merge(to_plot_final, to_plot_emigrate, by = c("year", "prov"))
 to_plot_f <- to_plot_final %>% mutate(perc_aoj11 = ifelse(aoj11 != 4, 0, perc_aoj11))
 to_plot_ff <- to_plot_f %>% mutate(perc_idio2 = ifelse(idio2 != 3, 0, perc_idio2))
 
-rm(to_plot_final, to_plot_f, to_plot_econ, to_plot_unsafe, unsafe, econ, unsafe.na, econ.na)                                   
+rm(to_plot_final, to_plot_f, to_plot_econ, to_plot_unsafe, emigrate, unsafe, econ, unsafe.na, econ.na, emigrate.na, hond2017, to_plot_emigrate)                                   
 
 # Plot
 
@@ -255,17 +261,22 @@ plot + labs(title = "In Honduran provinces with largest percentage of people \n 
               legend.title = element_text(colour="black", size=12, 
                                           face="bold"))
 
+rm(to_plot_ff, plot)
 ```
 
-## How has the cost changed over time?
-```{r cost}
+However, as the graph above shows, it appears that in Honduras -- the country that's seen the largest increases in its citizens planning to emigrate -- a lack of economic opportunity is driving emigration. In the Honduran states where more than 40% of survey respondents plan to emigrate in the next three years, it's clear that more respondents feel their economic prospects have worsened. In the state of Colón for instance, more than 50% of the population wants to emigrate, more than 50% feel that their economic prospects have worsened, and only 20% feel that their neighborhood is very unsafe from crime. 
+
+Even as it appears that Central American migrants specifically are fleeing poverty, they often face significant economic challenges as they try to make it to the United States. Often, in order to secure a safe passage from the Guatemala-Mexico border to the US-Mexico border, these migrants will secure the assistance of 'coyotes,' members of criminal organizations that guide them in their journey. 
+
+
+```{r cost, warning = FALSE}
 tograph <- slopegraph %>%
   group_by(year, pais) %>%
   filter(p17_1c >0, p17_1u == 3) %>%
   summarize(mean_spent = mean(p17_1c)) %>%
   mutate_if(is.numeric, round, 0)
 
-rm(e2014, e2015, e2016, e2017, h2014, h2015, h2016, h2017, g2014, g2015, g2016, g2017)
+rm(e2014, e2015, e2016, e2017, h2014, h2015, h2016, h2017, g2014, g2015, g2016, g2017, slopegraph)
 
 # Slope graph
 
@@ -311,10 +322,16 @@ ggplot(data = tograph, aes(x = year, y = mean_spent, group = pais)) +
     subtitle = "Guatemalan migrants have experienced similar increases, \n but Salvadorean migrants have paid less for a successful trip",
     caption = "Source: EMIF Sur (2014-2017)"
   )
+
+rm(tograph)
 ```
 
-## What's the route that Central American migrants take northward?
-```{r routes}
+As evidenced by the graph above, these coyotes are expensive -- and are getting more costly over time. For migrants originating from the three Northern Triangle countries who safely made it to the US-Mexico border but got deported from the United States, the price paid to a coyote has increased significantly. Nowhere is this increase more prominent than for the Honduran migrants who are fleeing dire economic circumstances. The cost of a coyote for those Honduran migrants who reached the US-Mexico border has increased from 3942 dollars in 2014 to 6386 dollars in 2017. 
+
+Yet, despite the cost associated with the trip, there is no guarantee that Central American migrants will evade migration forces in Mexico. The likelihood of being deported while traversing Mexico has likely increased in the last three years. Mexico, working in partnership with the United States, has beefed up its efforts to deport Central American migrants since 2014. 
+
+
+```{r routes, warning = FALSE}
 
 drop1 <- alluvial %>% filter(p15 >= 0, p22_1l >= 0, p22_2l >= 0, p26 >= 0, p24l >= 0)
 clean <- drop1 %>% filter(p15 < 2000000, p22_1l < 900000000, p22_2l < 900000000, p26 < 300000000, p24l < 9000000000)
@@ -322,6 +339,7 @@ rm(drop1)
 
 alluvialnodeshond <- rename(count(clean, deported, p15, p22_1l, p22_2l, p24l, p26, p34l), Freq = n)
 touse <- alluvialnodeshond %>% filter(Freq>2)
+rm(clean, alluvialnodeshond)
 
 ## Make names for it
 
@@ -384,11 +402,15 @@ ggplot(touse,
       axis.title.y = element_text(color="black", size=8),
       plot.caption = element_text(color="black", size=6, face="italic"))
 
+rm(touse)
 ```
 
-## What is the US investing in Honduras to make it better?
+The graph above, which shows the paths that Honduran migrants take within Mexico, shows that there some slight differences in the paths that deported migrants and non-deported migrants take. Namely, migrants entering Mexico through Bethel tend to all be deported, while migrants who make a stop in Chiapa de Corso tend to all make it to the US-Mexico border. Additionally, it seems that deported migrants tend to be caught in cities either near the US-Mexico border or on the Gulf of Mexico, while migrants that manage to make it safely through those cities often wind up making it to Reynosa, where they cross into the United States. 
 
-```{r usaid, echo=FALSE}
+In addition to deportation, Central American migrants working their way through Mexico face significant dangers. For that reason, academic experts and migrants rights advocates have often called for more investment in Northern Triangle countries to reduce violence, create more economic opportunity, and incentivize potential migrants to stay home. 
+
+
+```{r usaid, echo=FALSE, warning = FALSE}
 hond_sec <- subset(sec, country_name == 'Honduras')
 hond_sec$dac_sector_name[is.na(hond_sec$dac_sector_name)] <- "Conflict, Peace, and Security"
 
@@ -412,5 +434,8 @@ plot + scale_y_continuous(name = "Amount (in 10,000,000)", labels = c(0, 2,
                axis.title.x = element_text(color="black", size=10),
                axis.title.y = element_text(color="black", size=10),
                plot.caption = element_text(color="black", size=8, face="italic"))
+
+rm(plot, to_plot_sec, hond_sec)
 ```
 
+To that end, as the graph above shows, US aid to Honduras has emphasized investments in civil society and government since 2010. Notably, investments in these areas increased significantly in 2015, likely as a response to the unaccompanied minors crisis on the US southern border. Though, given the surge in Hondurans planning to emigrate in the next three years, it appears this aid has yet to make an impact in the country.  
