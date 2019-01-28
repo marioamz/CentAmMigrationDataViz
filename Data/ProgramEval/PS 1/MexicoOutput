@@ -1,0 +1,4163 @@
+Warning in install.packages :
+  installation of package ‘lmtest’ had non-zero exit status
+Error in install.packages : Updating loaded packages
+Error in install.packages : Updating loaded packages
+Error in install.packages : Updating loaded packages
+[1] "Number of clusters:"
+[1] 100
+[1] "Number of cluster pairs:"
+[1] 50
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 1 0
+[[1]]
+[1] 5919
+
+[[2]]
+[1] 15430
+
+[[3]]
+[1] 6736
+
+[[4]]
+[1] 1910
+
+[[5]]
+[1] 2343
+
+[[6]]
+[1] 162
+
+[1] 2
+[1] 0.4499462
+Error in install.packages : Updating loaded packages
+Warning in install.packages :
+  installation of package ‘lmtest’ had non-zero exit status
+Error in install.packages : Updating loaded packages
+Error in install.packages : Updating loaded packages
+Error in install.packages : Updating loaded packages
+[1] 100
+[1] 50
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 30.755, df = 757, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3889.880 4420.323
+sample estimates:
+mean of the differences 
+               4155.102 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 37.762, df = 668, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 10211.99 11332.23
+sample estimates:
+mean of the differences 
+               10772.11 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 9.6462, df = 753, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  779.9945 1178.5891
+sample estimates:
+mean of the differences 
+               979.2918 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 24.215, df = 669, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3450.331 4059.269
+sample estimates:
+mean of the differences 
+                 3754.8 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 22.777, df = 517, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9883.222 11749.036
+sample estimates:
+mean of the differences 
+               10816.13 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.9871, df = 666, p-value = 6.821e-12
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 391.6210 697.7613
+sample estimates:
+mean of the differences 
+               544.6912 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 22.424, df = 558, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2133.695 2543.378
+sample estimates:
+mean of the differences 
+               2338.537 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 24.205, df = 465, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7152.988 8417.031
+sample estimates:
+mean of the differences 
+               7785.009 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 8.847, df = 569, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 348.7456 547.7877
+sample estimates:
+mean of the differences 
+               448.2667 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 34.439, df = 692, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2556.655 2865.795
+sample estimates:
+mean of the differences 
+               2711.225 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 27.882, df = 626, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6345.972 7307.615
+sample estimates:
+mean of the differences 
+               6826.793 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.6834, df = 696, p-value = 5.276e-14
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 443.9664 748.7452
+sample estimates:
+mean of the differences 
+               596.3558 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 28.385, df = 565, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2247.784 2581.997
+sample estimates:
+mean of the differences 
+                2414.89 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 28.05, df = 549, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6345.770 7301.464
+sample estimates:
+mean of the differences 
+               6823.617 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.5715, df = 568, p-value = 1.129e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 411.9070 763.1089
+sample estimates:
+mean of the differences 
+               587.5079 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 36.265, df = 705, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2691.613 2999.736
+sample estimates:
+mean of the differences 
+               2845.674 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 36.845, df = 676, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7960.926 8857.177
+sample estimates:
+mean of the differences 
+               8409.052 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.6263, df = 701, p-value = 6.864e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 174.3097 321.0977
+sample estimates:
+mean of the differences 
+               247.7037 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 32.816, df = 671, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2887.160 3254.644
+sample estimates:
+mean of the differences 
+               3070.902 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 22.191, df = 629, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7612.838 9091.041
+sample estimates:
+mean of the differences 
+               8351.939 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.4431, df = 669, p-value = 2.239e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 121.8787 228.7243
+sample estimates:
+mean of the differences 
+               175.3015 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 17.18, df = 686, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 1888.948 2376.423
+sample estimates:
+mean of the differences 
+               2132.686 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 13.347, df = 577, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4270.028 5743.579
+sample estimates:
+mean of the differences 
+               5006.803 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.1203, df = 675, p-value = 4.255e-05
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  49.34277 139.18386
+sample estimates:
+mean of the differences 
+               94.26331 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 35.482, df = 692, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2535.056 2832.041
+sample estimates:
+mean of the differences 
+               2683.548 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 28.97, df = 657, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6204.658 7106.904
+sample estimates:
+mean of the differences 
+               6655.781 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.3147, df = 688, p-value = 4.855e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 214.3753 407.8395
+sample estimates:
+mean of the differences 
+               311.1074 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 33.282, df = 656, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4277.228 4813.570
+sample estimates:
+mean of the differences 
+               4545.399 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 31.572, df = 573, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 13153.37 14898.49
+sample estimates:
+mean of the differences 
+               14025.93 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.8344, df = 666, p-value = 1.866e-14
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  647.8155 1081.1410
+sample estimates:
+mean of the differences 
+               864.4783 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 16.408, df = 656, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3237.809 4118.137
+sample estimates:
+mean of the differences 
+               3677.973 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 24.379, df = 643, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7005.784 8233.226
+sample estimates:
+mean of the differences 
+               7619.505 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.6241, df = 657, p-value = 7.274e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 441.8314 814.1352
+sample estimates:
+mean of the differences 
+               627.9833 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 23.648, df = 616, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3068.739 3624.571
+sample estimates:
+mean of the differences 
+               3346.655 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 23.893, df = 545, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7472.974 8811.790
+sample estimates:
+mean of the differences 
+               8142.382 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.2604, df = 601, p-value = 7.308e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 342.3253 655.2760
+sample estimates:
+mean of the differences 
+               498.8007 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 24.657, df = 591, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2831.508 3321.624
+sample estimates:
+mean of the differences 
+               3076.566 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 28.361, df = 531, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6791.905 7802.800
+sample estimates:
+mean of the differences 
+               7297.353 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.462, df = 589, p-value = 9.729e-06
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 128.5771 330.7585
+sample estimates:
+mean of the differences 
+               229.6678 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 33.791, df = 686, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2290.028 2572.566
+sample estimates:
+mean of the differences 
+               2431.297 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 22.426, df = 599, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5862.020 6987.306
+sample estimates:
+mean of the differences 
+               6424.663 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.1654, df = 703, p-value = 3.129e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 226.6611 504.6202
+sample estimates:
+mean of the differences 
+               365.6406 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 38.601, df = 648, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3316.921 3672.466
+sample estimates:
+mean of the differences 
+               3494.693 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 33.716, df = 586, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7455.302 8377.601
+sample estimates:
+mean of the differences 
+               7916.451 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.7169, df = 636, p-value = 1.669e-08
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 251.2170 514.0954
+sample estimates:
+mean of the differences 
+               382.6562 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 23.89, df = 488, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2005.528 2364.975
+sample estimates:
+mean of the differences 
+               2185.252 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 22.072, df = 413, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6242.049 7462.562
+sample estimates:
+mean of the differences 
+               6852.306 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.2393, df = 498, p-value = 2.383e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 166.6955 366.7274
+sample estimates:
+mean of the differences 
+               266.7114 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 28.75, df = 677, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3200.596 3669.808
+sample estimates:
+mean of the differences 
+               3435.202 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 21.588, df = 644, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  8417.688 10102.283
+sample estimates:
+mean of the differences 
+               9259.985 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.1708, df = 677, p-value = 1.959e-12
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 357.1458 626.4766
+sample estimates:
+mean of the differences 
+               491.8112 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 25.242, df = 703, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4621.533 5401.100
+sample estimates:
+mean of the differences 
+               5011.317 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 30.858, df = 585, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11765.11 13364.53
+sample estimates:
+mean of the differences 
+               12564.82 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.2307, df = 721, p-value = 7.894e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  84.62171 162.48356
+sample estimates:
+mean of the differences 
+               123.5526 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 34.93, df = 715, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2677.542 2996.455
+sample estimates:
+mean of the differences 
+               2836.999 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 24.734, df = 543, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7344.982 8612.310
+sample estimates:
+mean of the differences 
+               7978.646 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 8.7307, df = 720, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 301.3316 476.1663
+sample estimates:
+mean of the differences 
+                388.749 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 36.034, df = 765, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3122.071 3481.842
+sample estimates:
+mean of the differences 
+               3301.957 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 30.211, df = 605, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 8505.798 9688.538
+sample estimates:
+mean of the differences 
+               9097.168 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.8021, df = 774, p-value = 2.063e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 319.6021 578.9037
+sample estimates:
+mean of the differences 
+               449.2529 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 30.842, df = 698, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4564.083 5184.689
+sample estimates:
+mean of the differences 
+               4874.386 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 24.77, df = 490, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 10654.60 12490.49
+sample estimates:
+mean of the differences 
+               11572.55 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.601, df = 700, p-value = 8.069e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 304.8222 562.9154
+sample estimates:
+mean of the differences 
+               433.8688 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 30.658, df = 736, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2350.067 2671.629
+sample estimates:
+mean of the differences 
+               2510.848 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 27.412, df = 653, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6588.064 7604.740
+sample estimates:
+mean of the differences 
+               7096.402 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.5036, df = 740, p-value = 7.759e-06
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  72.2151 183.8254
+sample estimates:
+mean of the differences 
+               128.0202 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 21.036, df = 702, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4503.431 5430.606
+sample estimates:
+mean of the differences 
+               4967.018 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 20.944, df = 532, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 13829.76 16692.61
+sample estimates:
+mean of the differences 
+               15261.18 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.0202, df = 714, p-value = 5.163e-12
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 346.7509 615.9932
+sample estimates:
+mean of the differences 
+                481.372 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 34.397, df = 734, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2962.701 3321.367
+sample estimates:
+mean of the differences 
+               3142.034 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 27.529, df = 622, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9537.482 11002.739
+sample estimates:
+mean of the differences 
+               10270.11 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.3338, df = 714, p-value = 6.087e-13
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 433.7969 750.9639
+sample estimates:
+mean of the differences 
+               592.3804 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 27.988, df = 619, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2321.875 2672.289
+sample estimates:
+mean of the differences 
+               2497.082 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 29.014, df = 605, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5656.814 6478.198
+sample estimates:
+mean of the differences 
+               6067.506 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.4639, df = 619, p-value = 2.07e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 106.2720 199.0247
+sample estimates:
+mean of the differences 
+               152.6484 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 14.155, df = 427, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2660.138 3518.035
+sample estimates:
+mean of the differences 
+               3089.086 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 16.22, df = 396, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7214.995 9205.175
+sample estimates:
+mean of the differences 
+               8210.085 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 3.1703, df = 427, p-value = 0.001633
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  63.02889 268.69541
+sample estimates:
+mean of the differences 
+               165.8621 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 32.874, df = 631, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2722.57 3068.50
+sample estimates:
+mean of the differences 
+               2895.535 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 27.6, df = 580, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7895.745 9105.587
+sample estimates:
+mean of the differences 
+               8500.666 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.8514, df = 631, p-value = 1.741e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 237.7429 428.7793
+sample estimates:
+mean of the differences 
+               333.2611 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 40.998, df = 601, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4059.666 4468.171
+sample estimates:
+mean of the differences 
+               4263.919 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 25.917, df = 515, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9454.277 11005.180
+sample estimates:
+mean of the differences 
+               10229.73 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.5014, df = 603, p-value = 1.67e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 226.8628 423.2431
+sample estimates:
+mean of the differences 
+                325.053 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 47.125, df = 673, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4297.438 4671.120
+sample estimates:
+mean of the differences 
+               4484.279 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 41.11, df = 649, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9937.356 10934.294
+sample estimates:
+mean of the differences 
+               10435.83 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.0423, df = 671, p-value = 5.924e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  51.17102 116.43909
+sample estimates:
+mean of the differences 
+               83.80506 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 18.989, df = 619, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4820.858 5932.971
+sample estimates:
+mean of the differences 
+               5376.915 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 24.954, df = 580, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11842.65 13866.10
+sample estimates:
+mean of the differences 
+               12854.37 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.8709, df = 619, p-value = 1.579e-14
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 363.8928 605.8426
+sample estimates:
+mean of the differences 
+               484.8677 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 36.747, df = 694, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3453.704 3843.593
+sample estimates:
+mean of the differences 
+               3648.649 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 26.155, df = 675, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 8429.548 9797.885
+sample estimates:
+mean of the differences 
+               9113.716 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.6832, df = 692, p-value = 5.319e-14
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 377.8123 637.1892
+sample estimates:
+mean of the differences 
+               507.5007 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 17.097, df = 594, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5115.595 6443.387
+sample estimates:
+mean of the differences 
+               5779.491 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 23.543, df = 487, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 12463.05 14732.80
+sample estimates:
+mean of the differences 
+               13597.93 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.0569, df = 593, p-value = 4.771e-12
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 237.4484 420.5819
+sample estimates:
+mean of the differences 
+               329.0152 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 28.551, df = 613, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5271.731 6050.510
+sample estimates:
+mean of the differences 
+               5661.121 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 30.659, df = 488, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 14082.99 16011.66
+sample estimates:
+mean of the differences 
+               15047.33 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.0154, df = 560, p-value = 6.742e-05
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 121.7829 355.0156
+sample estimates:
+mean of the differences 
+               238.3993 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 32.2, df = 543, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4901.111 5537.930
+sample estimates:
+mean of the differences 
+                5219.52 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 22.116, df = 490, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 12887.76 15400.97
+sample estimates:
+mean of the differences 
+               14144.37 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.4572, df = 553, p-value = 7.311e-08
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 255.7937 543.4879
+sample estimates:
+mean of the differences 
+               399.6408 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 42.905, df = 706, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4470.134 4898.859
+sample estimates:
+mean of the differences 
+               4684.496 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 39.539, df = 668, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9531.928 10528.130
+sample estimates:
+mean of the differences 
+               10030.03 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 8.7652, df = 701, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 144.5637 228.0203
+sample estimates:
+mean of the differences 
+                186.292 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 25.472, df = 681, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4926.227 5749.107
+sample estimates:
+mean of the differences 
+               5337.667 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 28.947, df = 599, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11398.03 13057.22
+sample estimates:
+mean of the differences 
+               12227.63 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.2547, df = 680, p-value = 1.1e-12
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 213.5924 372.1110
+sample estimates:
+mean of the differences 
+               292.8517 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 26.201, df = 488, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4143.917 4815.821
+sample estimates:
+mean of the differences 
+               4479.869 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 24.442, df = 462, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 8473.300 9954.926
+sample estimates:
+mean of the differences 
+               9214.113 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.5225, df = 489, p-value = 5.437e-08
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 187.1121 393.7899
+sample estimates:
+mean of the differences 
+                290.451 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 23.266, df = 648, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4588.716 5434.702
+sample estimates:
+mean of the differences 
+               5011.709 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 31.722, df = 582, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11465.88 12979.42
+sample estimates:
+mean of the differences 
+               12222.65 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.7241, df = 638, p-value = 3.929e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 125.924 229.813
+sample estimates:
+mean of the differences 
+               177.8685 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 21.633, df = 446, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5508.410 6609.277
+sample estimates:
+mean of the differences 
+               6058.843 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 20.028, df = 369, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 13129.25 15988.03
+sample estimates:
+mean of the differences 
+               14558.64 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.6127, df = 442, p-value = 5.213e-06
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 225.1716 559.4965
+sample estimates:
+mean of the differences 
+               392.3341 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 9.7276, df = 629, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3004.951 4525.062
+sample estimates:
+mean of the differences 
+               3765.006 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 18.748, df = 613, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7388.007 9116.900
+sample estimates:
+mean of the differences 
+               8252.454 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.7067, df = 622, p-value = 1.783e-08
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 228.9771 469.2476
+sample estimates:
+mean of the differences 
+               349.1124 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 17.474, df = 743, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3035.154 3803.459
+sample estimates:
+mean of the differences 
+               3419.306 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 26.289, df = 675, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7059.683 8199.368
+sample estimates:
+mean of the differences 
+               7629.526 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.6892, df = 773, p-value = 4.306e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 233.7871 427.9984
+sample estimates:
+mean of the differences 
+               330.8928 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 23.621, df = 626, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2533.793 2993.297
+sample estimates:
+mean of the differences 
+               2763.545 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 30.957, df = 607, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5503.026 6248.543
+sample estimates:
+mean of the differences 
+               5875.785 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.9096, df = 624, p-value = 1.167e-06
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 165.3759 385.8657
+sample estimates:
+mean of the differences 
+               275.6208 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 24.626, df = 701, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 1984.307 2328.117
+sample estimates:
+mean of the differences 
+               2156.212 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 12.283, df = 427, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3918.519 5411.482
+sample estimates:
+mean of the differences 
+               4665.001 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.1814, df = 751, p-value = 2.833e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 26.21413 58.19545
+sample estimates:
+mean of the differences 
+               42.20479 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 29.801, df = 348, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2621.733 2992.238
+sample estimates:
+mean of the differences 
+               2806.986 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 17.269, df = 264, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5790.387 7280.775
+sample estimates:
+mean of the differences 
+               6535.581 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 3.2554, df = 354, p-value = 0.001241
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 128.6047 521.1136
+sample estimates:
+mean of the differences 
+               324.8592 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 28.149, df = 518, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5366.321 6171.559
+sample estimates:
+mean of the differences 
+                5768.94 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 26.789, df = 464, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11675.01 13523.45
+sample estimates:
+mean of the differences 
+               12599.23 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.25, df = 527, p-value = 2.209e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 308.2934 676.9566
+sample estimates:
+mean of the differences 
+                492.625 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 20.334, df = 728, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5670.239 6882.134
+sample estimates:
+mean of the differences 
+               6276.187 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 22.864, df = 614, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 14655.50 17409.67
+sample estimates:
+mean of the differences 
+               16032.59 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 8.0479, df = 738, p-value = 3.364e-15
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 445.7014 733.3053
+sample estimates:
+mean of the differences 
+               589.5034 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 15.949, df = 741, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5020.119 6429.439
+sample estimates:
+mean of the differences 
+               5724.779 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 25.511, df = 692, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11993.05 13993.02
+sample estimates:
+mean of the differences 
+               12993.03 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 8.479, df = 736, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 400.9352 642.5356
+sample estimates:
+mean of the differences 
+               521.7354 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 40.31, df = 754, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5012.408 5525.611
+sample estimates:
+mean of the differences 
+               5269.009 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 36.725, df = 673, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 14829.91 16505.22
+sample estimates:
+mean of the differences 
+               15667.57 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 3.7501, df = 755, p-value = 0.0001903
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  76.57591 244.82356
+sample estimates:
+mean of the differences 
+               160.6997 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 29.886, df = 459, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 8164.711 9314.023
+sample estimates:
+mean of the differences 
+               8739.367 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 20.283, df = 369, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 23492.31 28536.42
+sample estimates:
+mean of the differences 
+               26014.36 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.0052, df = 460, p-value = 7.962e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 178.5022 409.2765
+sample estimates:
+mean of the differences 
+               293.8894 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 36.306, df = 712, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4751.193 5294.431
+sample estimates:
+mean of the differences 
+               5022.812 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 36.465, df = 568, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11649.60 12976.01
+sample estimates:
+mean of the differences 
+                12312.8 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.1577, df = 720, p-value = 3.235e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 181.3033 404.1586
+sample estimates:
+mean of the differences 
+               292.7309 
+
+Error in install.packages : Updating loaded packages
+Warning in install.packages :
+  installation of package ‘lmtest’ had non-zero exit status
+Error in install.packages : Updating loaded packages
+Error in install.packages : Updating loaded packages
+Error in install.packages : Updating loaded packages
+[1] 100
+[1] 50
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 0 1
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 1 0
+[1] 0 1
+[1] 1 0
+[1] 1 0
+[1] 1 0
+[[1]]
+[1] 5919
+
+[[2]]
+[1] 15430
+
+[[3]]
+[1] 6736
+
+[[4]]
+[1] 1910
+
+[[5]]
+[1] 2343
+
+[[6]]
+[1] 162
+
+[1] 2
+[1] 0.4499462
+[1] 9718.923
+[1] 9528.355
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 30.755, df = 757, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3889.880 4420.323
+sample estimates:
+mean of the differences 
+               4155.102 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 40.905, df = 757, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9906.093 10904.853
+sample estimates:
+mean of the differences 
+               10405.47 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 9.6462, df = 753, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  779.9945 1178.5891
+sample estimates:
+mean of the differences 
+               979.2918 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 24.215, df = 669, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3450.331 4059.269
+sample estimates:
+mean of the differences 
+                 3754.8 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 27.452, df = 676, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9351.94 10792.78
+sample estimates:
+mean of the differences 
+               10072.36 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.9871, df = 666, p-value = 6.821e-12
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 391.6210 697.7613
+sample estimates:
+mean of the differences 
+               544.6912 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 22.424, df = 558, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2133.695 2543.378
+sample estimates:
+mean of the differences 
+               2338.537 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 30.029, df = 579, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7250.925 8265.820
+sample estimates:
+mean of the differences 
+               7758.373 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 8.847, df = 569, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 348.7456 547.7877
+sample estimates:
+mean of the differences 
+               448.2667 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 34.439, df = 692, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2556.655 2865.795
+sample estimates:
+mean of the differences 
+               2711.225 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 31.542, df = 700, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6483.258 7343.956
+sample estimates:
+mean of the differences 
+               6913.607 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.6834, df = 696, p-value = 5.276e-14
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 443.9664 748.7452
+sample estimates:
+mean of the differences 
+               596.3558 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 28.385, df = 565, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2247.784 2581.997
+sample estimates:
+mean of the differences 
+                2414.89 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 29.354, df = 572, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6397.975 7315.579
+sample estimates:
+mean of the differences 
+               6856.777 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.5715, df = 568, p-value = 1.129e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 411.9070 763.1089
+sample estimates:
+mean of the differences 
+               587.5079 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 36.265, df = 705, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2691.613 2999.736
+sample estimates:
+mean of the differences 
+               2845.674 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 38.367, df = 707, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7947.193 8804.414
+sample estimates:
+mean of the differences 
+               8375.804 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.6263, df = 701, p-value = 6.864e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 174.3097 321.0977
+sample estimates:
+mean of the differences 
+               247.7037 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 32.816, df = 671, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2887.160 3254.644
+sample estimates:
+mean of the differences 
+               3070.902 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 23.575, df = 672, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7615.17 8998.93
+sample estimates:
+mean of the differences 
+                8307.05 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.4431, df = 669, p-value = 2.239e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 121.8787 228.7243
+sample estimates:
+mean of the differences 
+               175.3015 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 17.18, df = 686, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 1888.948 2376.423
+sample estimates:
+mean of the differences 
+               2132.686 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 17.557, df = 700, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4858.696 6082.186
+sample estimates:
+mean of the differences 
+               5470.441 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.1203, df = 675, p-value = 4.255e-05
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  49.34277 139.18386
+sample estimates:
+mean of the differences 
+               94.26331 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 35.482, df = 692, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2535.056 2832.041
+sample estimates:
+mean of the differences 
+               2683.548 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 30.77, df = 693, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6279.353 7135.312
+sample estimates:
+mean of the differences 
+               6707.332 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.3147, df = 688, p-value = 4.855e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 214.3753 407.8395
+sample estimates:
+mean of the differences 
+               311.1074 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 33.282, df = 656, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4277.228 4813.570
+sample estimates:
+mean of the differences 
+               4545.399 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 33.536, df = 666, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 12367.67 13906.01
+sample estimates:
+mean of the differences 
+               13136.84 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.8344, df = 666, p-value = 1.866e-14
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  647.8155 1081.1410
+sample estimates:
+mean of the differences 
+               864.4783 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 16.408, df = 656, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3237.809 4118.137
+sample estimates:
+mean of the differences 
+               3677.973 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 24.912, df = 657, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7019.509 8220.768
+sample estimates:
+mean of the differences 
+               7620.139 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.6241, df = 657, p-value = 7.274e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 441.8314 814.1352
+sample estimates:
+mean of the differences 
+               627.9833 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 23.648, df = 616, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3068.739 3624.571
+sample estimates:
+mean of the differences 
+               3346.655 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 26.932, df = 619, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7494.143 8672.991
+sample estimates:
+mean of the differences 
+               8083.567 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.2604, df = 601, p-value = 7.308e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 342.3253 655.2760
+sample estimates:
+mean of the differences 
+               498.8007 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 24.657, df = 591, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2831.508 3321.624
+sample estimates:
+mean of the differences 
+               3076.566 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 31.879, df = 594, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6882.762 7786.481
+sample estimates:
+mean of the differences 
+               7334.621 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.462, df = 589, p-value = 9.729e-06
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 128.5771 330.7585
+sample estimates:
+mean of the differences 
+               229.6678 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 33.791, df = 686, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2290.028 2572.566
+sample estimates:
+mean of the differences 
+               2431.297 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 27.128, df = 706, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6131.681 7088.451
+sample estimates:
+mean of the differences 
+               6610.066 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.1654, df = 703, p-value = 3.129e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 226.6611 504.6202
+sample estimates:
+mean of the differences 
+               365.6406 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 38.601, df = 648, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3316.921 3672.466
+sample estimates:
+mean of the differences 
+               3494.693 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 37.322, df = 651, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7474.737 8304.938
+sample estimates:
+mean of the differences 
+               7889.837 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.7169, df = 636, p-value = 1.669e-08
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 251.2170 514.0954
+sample estimates:
+mean of the differences 
+               382.6562 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 23.89, df = 488, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2005.528 2364.975
+sample estimates:
+mean of the differences 
+               2185.252 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 27.514, df = 505, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6497.622 7496.918
+sample estimates:
+mean of the differences 
+                6997.27 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.2393, df = 498, p-value = 2.383e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 166.6955 366.7274
+sample estimates:
+mean of the differences 
+               266.7114 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 28.75, df = 677, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3200.596 3669.808
+sample estimates:
+mean of the differences 
+               3435.202 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 22.544, df = 679, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 8377.798 9976.368
+sample estimates:
+mean of the differences 
+               9177.083 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.1708, df = 677, p-value = 1.959e-12
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 357.1458 626.4766
+sample estimates:
+mean of the differences 
+               491.8112 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 25.242, df = 703, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4621.533 5401.100
+sample estimates:
+mean of the differences 
+               5011.317 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 34.426, df = 721, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 10975.26 12302.78
+sample estimates:
+mean of the differences 
+               11639.02 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.2307, df = 721, p-value = 7.894e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  84.62171 162.48356
+sample estimates:
+mean of the differences 
+               123.5526 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 34.93, df = 715, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2677.542 2996.455
+sample estimates:
+mean of the differences 
+               2836.999 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 33.19, df = 737, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7425.327 8358.969
+sample estimates:
+mean of the differences 
+               7892.148 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 8.7307, df = 720, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 301.3316 476.1663
+sample estimates:
+mean of the differences 
+                388.749 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 36.034, df = 765, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3122.071 3481.842
+sample estimates:
+mean of the differences 
+               3301.957 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 37.764, df = 789, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 8304.634 9215.328
+sample estimates:
+mean of the differences 
+               8759.981 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.8021, df = 774, p-value = 2.063e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 319.6021 578.9037
+sample estimates:
+mean of the differences 
+               449.2529 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 30.842, df = 698, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4564.083 5184.689
+sample estimates:
+mean of the differences 
+               4874.386 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 31.242, df = 704, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9729.295 11034.150
+sample estimates:
+mean of the differences 
+               10381.72 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.601, df = 700, p-value = 8.069e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 304.8222 562.9154
+sample estimates:
+mean of the differences 
+               433.8688 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 30.658, df = 736, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2350.067 2671.629
+sample estimates:
+mean of the differences 
+               2510.848 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 31.603, df = 746, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6720.183 7610.382
+sample estimates:
+mean of the differences 
+               7165.282 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.5036, df = 740, p-value = 7.759e-06
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  72.2151 183.8254
+sample estimates:
+mean of the differences 
+               128.0202 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 21.036, df = 702, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4503.431 5430.606
+sample estimates:
+mean of the differences 
+               4967.018 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 24.053, df = 722, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 12178.58 14343.39
+sample estimates:
+mean of the differences 
+               13260.98 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.0202, df = 714, p-value = 5.163e-12
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 346.7509 615.9932
+sample estimates:
+mean of the differences 
+                481.372 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 34.397, df = 734, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2962.701 3321.367
+sample estimates:
+mean of the differences 
+               3142.034 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 31.408, df = 746, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9220.343 10449.829
+sample estimates:
+mean of the differences 
+               9835.086 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.3338, df = 714, p-value = 6.087e-13
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 433.7969 750.9639
+sample estimates:
+mean of the differences 
+               592.3804 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 27.988, df = 619, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2321.875 2672.289
+sample estimates:
+mean of the differences 
+               2497.082 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 29.886, df = 620, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5704.514 6506.918
+sample estimates:
+mean of the differences 
+               6105.716 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.4639, df = 619, p-value = 2.07e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 106.2720 199.0247
+sample estimates:
+mean of the differences 
+               152.6484 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 14.155, df = 427, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2660.138 3518.035
+sample estimates:
+mean of the differences 
+               3089.086 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 17.438, df = 428, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7247.618 9088.964
+sample estimates:
+mean of the differences 
+               8168.291 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 3.1703, df = 427, p-value = 0.001633
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  63.02889 268.69541
+sample estimates:
+mean of the differences 
+               165.8621 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 32.874, df = 631, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2722.57 3068.50
+sample estimates:
+mean of the differences 
+               2895.535 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 29.979, df = 636, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7873.930 8977.764
+sample estimates:
+mean of the differences 
+               8425.847 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.8514, df = 631, p-value = 1.741e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 237.7429 428.7793
+sample estimates:
+mean of the differences 
+               333.2611 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 40.998, df = 601, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4059.666 4468.171
+sample estimates:
+mean of the differences 
+               4263.919 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 29.229, df = 608, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9174.866 10496.559
+sample estimates:
+mean of the differences 
+               9835.713 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.5014, df = 603, p-value = 1.67e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 226.8628 423.2431
+sample estimates:
+mean of the differences 
+                325.053 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 47.125, df = 673, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4297.438 4671.120
+sample estimates:
+mean of the differences 
+               4484.279 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 42.288, df = 678, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9837.792 10795.820
+sample estimates:
+mean of the differences 
+               10316.81 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.0423, df = 671, p-value = 5.924e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  51.17102 116.43909
+sample estimates:
+mean of the differences 
+               83.80506 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 18.989, df = 619, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4820.858 5932.971
+sample estimates:
+mean of the differences 
+               5376.915 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 25.898, df = 623, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11548.18 13443.20
+sample estimates:
+mean of the differences 
+               12495.69 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.8709, df = 619, p-value = 1.579e-14
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 363.8928 605.8426
+sample estimates:
+mean of the differences 
+               484.8677 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 36.747, df = 694, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3453.704 3843.593
+sample estimates:
+mean of the differences 
+               3648.649 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 26.763, df = 694, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 8408.036 9739.349
+sample estimates:
+mean of the differences 
+               9073.692 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.6832, df = 692, p-value = 5.319e-14
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 377.8123 637.1892
+sample estimates:
+mean of the differences 
+               507.5007 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 17.097, df = 594, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5115.595 6443.387
+sample estimates:
+mean of the differences 
+               5779.491 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 26.086, df = 600, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11539.96 13419.07
+sample estimates:
+mean of the differences 
+               12479.51 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.0569, df = 593, p-value = 4.771e-12
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 237.4484 420.5819
+sample estimates:
+mean of the differences 
+               329.0152 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 28.551, df = 613, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5271.731 6050.510
+sample estimates:
+mean of the differences 
+               5661.121 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 33.181, df = 616, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 12712.94 14312.44
+sample estimates:
+mean of the differences 
+               13512.69 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.0154, df = 560, p-value = 6.742e-05
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 121.7829 355.0156
+sample estimates:
+mean of the differences 
+               238.3993 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 32.2, df = 543, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4901.111 5537.930
+sample estimates:
+mean of the differences 
+                5219.52 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 23.416, df = 555, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 12262.21 14507.84
+sample estimates:
+mean of the differences 
+               13385.02 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.4572, df = 553, p-value = 7.311e-08
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 255.7937 543.4879
+sample estimates:
+mean of the differences 
+               399.6408 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 42.905, df = 706, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4470.134 4898.859
+sample estimates:
+mean of the differences 
+               4684.496 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 41.108, df = 706, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  9429.143 10375.005
+sample estimates:
+mean of the differences 
+               9902.074 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 8.7652, df = 701, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 144.5637 228.0203
+sample estimates:
+mean of the differences 
+                186.292 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 25.472, df = 681, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4926.227 5749.107
+sample estimates:
+mean of the differences 
+               5337.667 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 31.165, df = 685, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 10919.50 12387.89
+sample estimates:
+mean of the differences 
+               11653.69 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 7.2547, df = 680, p-value = 1.1e-12
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 213.5924 372.1110
+sample estimates:
+mean of the differences 
+               292.8517 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 26.201, df = 488, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4143.917 4815.821
+sample estimates:
+mean of the differences 
+               4479.869 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 25.686, df = 491, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 8424.141 9819.661
+sample estimates:
+mean of the differences 
+               9121.901 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.5225, df = 489, p-value = 5.437e-08
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 187.1121 393.7899
+sample estimates:
+mean of the differences 
+                290.451 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 23.266, df = 648, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4588.716 5434.702
+sample estimates:
+mean of the differences 
+               5011.709 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 33.646, df = 651, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11053.64 12423.80
+sample estimates:
+mean of the differences 
+               11738.72 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.7241, df = 638, p-value = 3.929e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 125.924 229.813
+sample estimates:
+mean of the differences 
+               177.8685 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 21.633, df = 446, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5508.410 6609.277
+sample estimates:
+mean of the differences 
+               6058.843 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 21.793, df = 447, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 12151.33 14560.22
+sample estimates:
+mean of the differences 
+               13355.77 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.6127, df = 442, p-value = 5.213e-06
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 225.1716 559.4965
+sample estimates:
+mean of the differences 
+               392.3341 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 9.7276, df = 629, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3004.951 4525.062
+sample estimates:
+mean of the differences 
+               3765.006 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 19.2, df = 629, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7394.677 9079.608
+sample estimates:
+mean of the differences 
+               8237.142 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.7067, df = 622, p-value = 1.783e-08
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 228.9771 469.2476
+sample estimates:
+mean of the differences 
+               349.1124 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 17.474, df = 743, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 3035.154 3803.459
+sample estimates:
+mean of the differences 
+               3419.306 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 30.464, df = 782, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 7140.428 8124.029
+sample estimates:
+mean of the differences 
+               7632.229 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 6.6892, df = 773, p-value = 4.306e-11
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 233.7871 427.9984
+sample estimates:
+mean of the differences 
+               330.8928 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 23.621, df = 626, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2533.793 2993.297
+sample estimates:
+mean of the differences 
+               2763.545 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 32.147, df = 626, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5567.315 6291.753
+sample estimates:
+mean of the differences 
+               5929.534 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 4.9096, df = 624, p-value = 1.167e-06
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 165.3759 385.8657
+sample estimates:
+mean of the differences 
+               275.6208 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 24.626, df = 701, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 1984.307 2328.117
+sample estimates:
+mean of the differences 
+               2156.212 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 27.345, df = 765, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5552.483 6411.353
+sample estimates:
+mean of the differences 
+               5981.918 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.1814, df = 751, p-value = 2.833e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 26.21413 58.19545
+sample estimates:
+mean of the differences 
+               42.20479 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 29.801, df = 348, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 2621.733 2992.238
+sample estimates:
+mean of the differences 
+               2806.986 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 24.722, df = 363, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 6294.618 7382.558
+sample estimates:
+mean of the differences 
+               6838.588 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 3.2554, df = 354, p-value = 0.001241
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 128.6047 521.1136
+sample estimates:
+mean of the differences 
+               324.8592 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 28.149, df = 518, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5366.321 6171.559
+sample estimates:
+mean of the differences 
+                5768.94 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 28.766, df = 533, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11142.93 12776.37
+sample estimates:
+mean of the differences 
+               11959.65 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.25, df = 527, p-value = 2.209e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 308.2934 676.9566
+sample estimates:
+mean of the differences 
+                492.625 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 20.334, df = 728, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5670.239 6882.134
+sample estimates:
+mean of the differences 
+               6276.187 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 24.605, df = 739, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 13450.33 15782.73
+sample estimates:
+mean of the differences 
+               14616.53 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 8.0479, df = 738, p-value = 3.364e-15
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 445.7014 733.3053
+sample estimates:
+mean of the differences 
+               589.5034 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 15.949, df = 741, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5020.119 6429.439
+sample estimates:
+mean of the differences 
+               5724.779 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 26.474, df = 743, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 11690.40 13563.09
+sample estimates:
+mean of the differences 
+               12626.75 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 8.479, df = 736, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 400.9352 642.5356
+sample estimates:
+mean of the differences 
+               521.7354 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 40.31, df = 754, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 5012.408 5525.611
+sample estimates:
+mean of the differences 
+               5269.009 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 37.892, df = 758, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 14004.47 15534.83
+sample estimates:
+mean of the differences 
+               14769.65 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 3.7501, df = 755, p-value = 0.0001903
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  76.57591 244.82356
+sample estimates:
+mean of the differences 
+               160.6997 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 29.886, df = 459, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 8164.711 9314.023
+sample estimates:
+mean of the differences 
+               8739.367 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 20.659, df = 461, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 20230.57 24483.92
+sample estimates:
+mean of the differences 
+               22357.25 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.0052, df = 460, p-value = 7.962e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 178.5022 409.2765
+sample estimates:
+mean of the differences 
+               293.8894 
+
+
+	Paired t-test
+
+data:  subz$food_yr_05 and subz$treatment
+t = 36.306, df = 712, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 4751.193 5294.431
+sample estimates:
+mean of the differences 
+               5022.812 
+
+
+	Paired t-test
+
+data:  subz$allbut_05 and subz$treatment
+t = 41.411, df = 730, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 10744.65 11814.12
+sample estimates:
+mean of the differences 
+               11279.39 
+
+
+	Paired t-test
+
+data:  subz$oop_yr3_05 and subz$treatment
+t = 5.1577, df = 720, p-value = 3.235e-07
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 181.3033 404.1586
+sample estimates:
+mean of the differences 
+               292.7309 
+
+[1] "share for 05:"
+[1] "share for 06:"
+[1] "percentiles 05:"
+[1] "percentiles 06:"
+[1] "adjustable share for 05:"
+[1] "adjustable share for 06:"
+[1] "adjustable percentiles 05:"
+[1] "adjustable percentiles 06:"
+
+Extreme Health on Treatment
+==============================================================================
+                                              Dependent variable:             
+                                 ---------------------------------------------
+                                 ext_hbs_05 ext_ahbs_05 ext_hbs_06 ext_ahbs_06
+                                    (1)         (2)        (3)         (4)    
+------------------------------------------------------------------------------
+treatment                          -0.001     -0.001    -0.008***   -0.006*** 
+                                  (0.002)     (0.002)    (0.002)     (0.002)  
+                                                                              
+Constant                          0.029***   0.022***    0.035***   0.026***  
+                                  (0.001)     (0.001)    (0.001)     (0.001)  
+                                                                              
+------------------------------------------------------------------------------
+Observations                       32,515     32,515      32,515     32,515   
+R2                                0.00000     0.00001     0.0005     0.0004   
+Adjusted R2                       -0.00003   -0.00002     0.0004     0.0003   
+Residual Std. Error (df = 32513)   0.167       0.147      0.173       0.152   
+F Statistic (df = 1; 32513)        0.091       0.208    15.268***   11.835*** 
+==============================================================================
+Note:                                              *p<0.1; **p<0.05; ***p<0.01
+
+Extremem Health on Treatment and Dummies
+==============================================================================
+                                              Dependent variable:             
+                                 ---------------------------------------------
+                                 ext_hbs_05 ext_ahbs_05 ext_hbs_06 ext_ahbs_06
+                                    (1)         (2)        (3)         (4)    
+------------------------------------------------------------------------------
+treatment                          -0.001     -0.001    -0.008***   -0.006*** 
+                                  (0.002)     (0.002)    (0.002)     (0.002)  
+                                                                              
+.data_1                           0.060***   0.043***    0.059***   0.041***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_2                           0.029***   0.024***    0.038***   0.031***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_3                           0.030***    0.018**    0.077***   0.055***  
+                                  (0.009)     (0.008)    (0.010)     (0.008)  
+                                                                              
+.data_4                           0.066***   0.050***    0.060***   0.049***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_5                           0.060***   0.048***    0.086***   0.065***  
+                                  (0.009)     (0.008)    (0.010)     (0.008)  
+                                                                              
+.data_6                           0.017**      0.009     0.029***   0.021***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_7                            0.013       0.007     0.030***    0.017**  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_8                            0.002      -0.001     0.052***   0.038***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_9                           0.021**     0.015*     0.047***   0.034***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_10                          0.047***   0.028***    0.036***   0.023***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_11                          0.050***   0.038***    0.042***   0.029***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_12                          0.037***   0.026***    0.043***   0.030***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_13                           0.017*      0.009     0.027***    0.019**  
+                                  (0.009)     (0.008)    (0.010)     (0.008)  
+                                                                              
+.data_14                          0.031***    0.016**     0.018*     0.013*   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_15                          0.021**     0.015*     0.035***   0.021***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_16                          0.019**     0.015*      0.018*      0.011   
+                                  (0.010)     (0.008)    (0.010)     (0.009)  
+                                                                              
+.data_17                          0.037***   0.033***    0.067***   0.043***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_18                           -0.007     -0.007     0.033***   0.021***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_19                          0.034***   0.022***    0.036***   0.029***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_20                          0.027***     0.012     0.026***    0.013*   
+                                  (0.009)     (0.007)    (0.009)     (0.008)  
+                                                                              
+.data_21                          0.023***    0.015*     0.019**     0.015*   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_22                           0.007      -0.0001    0.019**      0.013   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_23                          0.018**     0.017**    0.038***   0.025***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_24                          0.039***   0.028***    0.037***   0.025***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_25                           0.014       0.008     0.031***   0.028***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_26                           0.004      -0.001     0.058***   0.047***  
+                                  (0.010)     (0.009)    (0.010)     (0.009)  
+                                                                              
+.data_27                           0.017*      0.012     0.021**     0.015*   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_28                           0.017*      0.012     0.054***   0.036***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_29                           -0.007     -0.005      0.011       0.007   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_30                          0.024***    0.016**     0.016*      0.012   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_31                          0.031***   0.024***    0.033***   0.022***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_32                           0.009       0.009     0.020**     0.015*   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_33                          -0.0001     -0.002      0.007       0.002   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_34                          0.019**      0.012      0.013       0.008   
+                                  (0.009)     (0.008)    (0.010)     (0.009)  
+                                                                              
+.data_35                           -0.002     -0.005     0.031***    0.021**  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_36                           0.008       0.002     0.018**      0.011   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_37                           0.008       0.006      0.011       0.006   
+                                  (0.010)     (0.009)    (0.010)     (0.009)  
+                                                                              
+.data_38                           -0.005     -0.005      0.010       0.007   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_39                           0.008       0.003     0.022**     0.018**  
+                                  (0.010)     (0.009)    (0.010)     (0.009)  
+                                                                              
+.data_40                          0.024***    0.017**    0.045***   0.034***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_41                          0.034***   0.020***    0.025***    0.018**  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_42                          0.021**     0.017**     0.013       0.013   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_43                           0.001      -0.006      0.005       0.002   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_44                          0.022**      0.008      0.016       0.009   
+                                  (0.011)     (0.009)    (0.011)     (0.010)  
+                                                                              
+.data_45                          0.020**     0.014*      0.018*     0.015*   
+                                  (0.009)     (0.008)    (0.010)     (0.009)  
+                                                                              
+.data_46                          0.030***   0.024***    0.026***    0.017**  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_47                          0.021**     0.016**     0.010       0.009   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_48                          -0.0002     -0.002     0.022**     0.014*   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_49                           0.007       0.007      0.010       0.006   
+                                  (0.010)     (0.009)    (0.010)     (0.009)  
+                                                                              
+.data_50                                                                      
+                                                                              
+                                                                              
+Constant                           0.008       0.009      0.004       0.005   
+                                  (0.006)     (0.005)    (0.006)     (0.006)  
+                                                                              
+------------------------------------------------------------------------------
+Observations                       32,515     32,515      32,515     32,515   
+R2                                 0.011       0.009      0.012       0.009   
+Adjusted R2                        0.009       0.007      0.010       0.007   
+Residual Std. Error (df = 32464)   0.167       0.146      0.172       0.151   
+F Statistic (df = 50; 32464)      7.141***   5.721***    7.683***   5.675***  
+==============================================================================
+Note:                                              *p<0.1; **p<0.05; ***p<0.01
+
+Extreme Health on Treatment with Baseline
+==============================================================================
+                                              Dependent variable:             
+                                 ---------------------------------------------
+                                 ext_hbs_05 ext_ahbs_05 ext_hbs_06 ext_ahbs_06
+                                    (1)         (2)        (3)         (4)    
+------------------------------------------------------------------------------
+treatment                          -0.001     -0.001    -0.008***   -0.006*** 
+                                  (0.002)     (0.002)    (0.002)     (0.002)  
+                                                                              
+Constant                          0.029***   0.022***    0.035***   0.026***  
+                                  (0.001)     (0.001)    (0.001)     (0.001)  
+                                                                              
+------------------------------------------------------------------------------
+Observations                       32,515     32,515      32,515     32,515   
+R2                                0.00000     0.00001     0.0005     0.0004   
+Adjusted R2                       -0.00003   -0.00002     0.0004     0.0003   
+Residual Std. Error (df = 32513)   0.167       0.147      0.173       0.152   
+F Statistic (df = 1; 32513)        0.091       0.208    15.268***   11.835*** 
+==============================================================================
+Note:                                              *p<0.1; **p<0.05; ***p<0.01
+
+Extreme Health on Treatment with Dummies and Baseline
+==============================================================================
+                                              Dependent variable:             
+                                 ---------------------------------------------
+                                 ext_hbs_05 ext_ahbs_05 ext_hbs_06 ext_ahbs_06
+                                    (1)         (2)        (3)         (4)    
+------------------------------------------------------------------------------
+treatment                          -0.001     -0.001    -0.008***   -0.006*** 
+                                  (0.002)     (0.002)    (0.002)     (0.002)  
+                                                                              
+.data_1                           0.060***   0.043***    0.059***   0.041***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_2                           0.029***   0.024***    0.038***   0.031***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_3                           0.030***    0.018**    0.077***   0.055***  
+                                  (0.009)     (0.008)    (0.010)     (0.008)  
+                                                                              
+.data_4                           0.066***   0.050***    0.060***   0.049***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_5                           0.060***   0.048***    0.086***   0.065***  
+                                  (0.009)     (0.008)    (0.010)     (0.008)  
+                                                                              
+.data_6                           0.017**      0.009     0.029***   0.021***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_7                            0.013       0.007     0.030***    0.017**  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_8                            0.002      -0.001     0.052***   0.038***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_9                           0.021**     0.015*     0.047***   0.034***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_10                          0.047***   0.028***    0.036***   0.023***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_11                          0.050***   0.038***    0.042***   0.029***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_12                          0.037***   0.026***    0.043***   0.030***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_13                           0.017*      0.009     0.027***    0.019**  
+                                  (0.009)     (0.008)    (0.010)     (0.008)  
+                                                                              
+.data_14                          0.031***    0.016**     0.018*     0.013*   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_15                          0.021**     0.015*     0.035***   0.021***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_16                          0.019**     0.015*      0.018*      0.011   
+                                  (0.010)     (0.008)    (0.010)     (0.009)  
+                                                                              
+.data_17                          0.037***   0.033***    0.067***   0.043***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_18                           -0.007     -0.007     0.033***   0.021***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_19                          0.034***   0.022***    0.036***   0.029***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_20                          0.027***     0.012     0.026***    0.013*   
+                                  (0.009)     (0.007)    (0.009)     (0.008)  
+                                                                              
+.data_21                          0.023***    0.015*     0.019**     0.015*   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_22                           0.007      -0.0001    0.019**      0.013   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_23                          0.018**     0.017**    0.038***   0.025***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_24                          0.039***   0.028***    0.037***   0.025***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_25                           0.014       0.008     0.031***   0.028***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_26                           0.004      -0.001     0.058***   0.047***  
+                                  (0.010)     (0.009)    (0.010)     (0.009)  
+                                                                              
+.data_27                           0.017*      0.012     0.021**     0.015*   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_28                           0.017*      0.012     0.054***   0.036***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_29                           -0.007     -0.005      0.011       0.007   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_30                          0.024***    0.016**     0.016*      0.012   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_31                          0.031***   0.024***    0.033***   0.022***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_32                           0.009       0.009     0.020**     0.015*   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_33                          -0.0001     -0.002      0.007       0.002   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_34                          0.019**      0.012      0.013       0.008   
+                                  (0.009)     (0.008)    (0.010)     (0.009)  
+                                                                              
+.data_35                           -0.002     -0.005     0.031***    0.021**  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_36                           0.008       0.002     0.018**      0.011   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_37                           0.008       0.006      0.011       0.006   
+                                  (0.010)     (0.009)    (0.010)     (0.009)  
+                                                                              
+.data_38                           -0.005     -0.005      0.010       0.007   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_39                           0.008       0.003     0.022**     0.018**  
+                                  (0.010)     (0.009)    (0.010)     (0.009)  
+                                                                              
+.data_40                          0.024***    0.017**    0.045***   0.034***  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_41                          0.034***   0.020***    0.025***    0.018**  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_42                          0.021**     0.017**     0.013       0.013   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_43                           0.001      -0.006      0.005       0.002   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_44                          0.022**      0.008      0.016       0.009   
+                                  (0.011)     (0.009)    (0.011)     (0.010)  
+                                                                              
+.data_45                          0.020**     0.014*      0.018*     0.015*   
+                                  (0.009)     (0.008)    (0.010)     (0.009)  
+                                                                              
+.data_46                          0.030***   0.024***    0.026***    0.017**  
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_47                          0.021**     0.016**     0.010       0.009   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_48                          -0.0002     -0.002     0.022**     0.014*   
+                                  (0.009)     (0.008)    (0.009)     (0.008)  
+                                                                              
+.data_49                           0.007       0.007      0.010       0.006   
+                                  (0.010)     (0.009)    (0.010)     (0.009)  
+                                                                              
+.data_50                                                                      
+                                                                              
+                                                                              
+Constant                           0.008       0.009      0.004       0.005   
+                                  (0.006)     (0.005)    (0.006)     (0.006)  
+                                                                              
+------------------------------------------------------------------------------
+Observations                       32,515     32,515      32,515     32,515   
+R2                                 0.011       0.009      0.012       0.009   
+Adjusted R2                        0.009       0.007      0.010       0.007   
+Residual Std. Error (df = 32464)   0.167       0.146      0.172       0.151   
+F Statistic (df = 50; 32464)      7.141***   5.721***    7.683***   5.675***  
+==============================================================================
+Note:                                              *p<0.1; **p<0.05; ***p<0.01

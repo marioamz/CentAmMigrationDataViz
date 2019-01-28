@@ -13,7 +13,7 @@ setwd("~/Desktop/Grad School/Data Viz/Migration Project")
 
 els <- read.csv('Data/elsLAPOP.csv')
 guate <- read.csv('Data/guateLAPOP.csv')
-hond <- read.csv('Data/hondLAPOP.csv')
+hond <- read.csv('Data/hondLAPOP.csv', encoding='latin1')
 sec <- read.csv('Data/security.csv')
 
 els$pais[els$pais==3] <- "El Salvador"
@@ -52,13 +52,13 @@ f <- new %>%
 
 # Plot
  
-plot <- ggplot(f,aes(x = year, y = perc, fill= pais)) + 
-  geom_bar(stat='identity', position='dodge', width=1) 
+plot <- ggplot(f,aes(x = year, y = perc, color= pais)) + 
+  geom_line(stat='identity', width=1) 
 
-plot + labs(title = "Percent who plan to emigrate in the next three years",
-            subtitle = "Plans to emigrate have increased substantially since 2012, with marked rises in Honduras",
+plot + labs(title = "More people are planning to emigrate \n from Honduras than ever before",
+            subtitle = "Across Central America, plans to emigrate \n have increased substantially since 2010",
             caption = "Source: LAPOP data, 2010-2017", 
-            x = "Years", y = "Percentage of Respondents Planning to Emigrate",
+            x = "Years", y = "Percent Planning to Emigrate",
             fill='Country') + theme(
               plot.title = element_text(color="black", size=14, face="bold", hjust=0.5),
               plot.subtitle = element_text(color="black", size=12, face="italic", hjust=0.5),
@@ -78,7 +78,7 @@ rm(new, f)
 ## This graph will show perceptions in violence and economic opportunity
 ## relative to answers on willingness to emigrate in the next 3 years for 2017
 
-hond2017 <- subset(hond, year==2017)
+hond2017 <- subset(hond, year==2016)
 
 # Calculate the percent of people in each province who said they felt
 # "Very unsafe" in the community
@@ -146,22 +146,25 @@ rm(to_plot_final, to_plot_f, to_plot_econ, to_plot_unsafe, unsafe, econ, unsafe.
 # Plot
 
 plot <- ggplot(to_plot_ff, 
-       aes(y = perc_aoj11, x = perc_idio2)) + 
-         geom_point(aes(color=as.factor(prov), size=perc_emigrate)) +
-         geom_text(aes(label=prov)) + scale_color_discrete(guide=FALSE) + scale_size_continuous(range=c(0,20), name='% Planning to Emigrate')
+               aes(y = perc_aoj11, x = perc_idio2, color = perc_emigrate)) + geom_point( alpha=0.2) +          
+  geom_text_repel(aes(label=prov)) + scale_color_distiller(name = '% planning to emigrate', palette='RdPu', trans='reverse') + 
+  scale_y_continuous(limits = c(0, 60)) + expand_limits(x=0)
+#expand_limits(x=0, y=0)
 
-plot + labs(title = "Plans to emigrate based on perceptions of violence and economic opportunity (2017)",
-            subtitle = "In Honduran provinces with largest percentage of people planning to emigrate, economic concerns prevail",
+plot + labs(title = "In Honduran provinces with largest percentage of people \n planning to emigrate, economic concerns prevail",
+            subtitle = "Economics might be playing a larger push role than violence",
             caption = "Source: LAPOP Honduras data 2017", 
-            x = "% who feel economic prospects have worsened", y = "% who feel very unsafe from crime in neighborhood",
+            x = "% who feel economic prospects have worsened", y = "% who feel very unsafe from crime",
             fill='Province') + theme(
               plot.title = element_text(color="black", size=14, face="bold", hjust=0.5),
               plot.subtitle = element_text(color="black", size=12, face="italic", hjust=0.5),
               axis.title.x = element_text(color="black", size=10),
               axis.title.y = element_text(color="black", size=10),
               plot.caption = element_text(color="black", size=8, face="italic"),
-              legend.justification = c(1, 1), 
-              legend.position = c(1, 1))
+              legend.justification = c(0.75, 0.75), 
+              legend.position = c(0.25,.75), 
+              legend.title = element_text(colour="black", size=12, 
+                                          face="bold"))
 
 ggsave('EconAndViolenceEmigration.pdf', path="Visualizations/", width=9, height=9, units='in')
 
@@ -180,20 +183,20 @@ to_plot_sec <- hond_sec %>%
 #Plot
 
 plot <- gghighlight_line(to_plot_sec, aes(fiscal_year, n, colour = dac_sector_name), predicate = max(n),
-                 max_highlight = 3)
+                         max_highlight = 3)
 
 plot + scale_y_continuous(name = "Amount (in 10,000,000)", labels = c(0, 2, 
-                                                                           4, 6, 8)) + 
-  labs(title = "US Foreign Aid to Honduras by sector",
-             subtitle = "US investments in Honduras have focused heavily on civil society and government programs",
-             caption = "Source: USAID Foreign Aid Explorer and Security Assistance Monitor data, 2010-2017", 
-             x = "Fiscal Year",
-             fill='Province') + theme(
-               plot.title = element_text(color="black", size=14, face="bold", hjust = 0.5),
-               plot.subtitle = element_text(color="black", size=12, face="italic", hjust =0.5),
-               axis.title.x = element_text(color="black", size=10),
-               axis.title.y = element_text(color="black", size=10),
-               plot.caption = element_text(color="black", size=8, face="italic"))
+                                                                      4, 6, 8)) + 
+  labs(title = "US Investments in Honduras have focused on civil society \n and government",
+       subtitle = "There's notable increases since 2015, the year \n after the unaccompanied minors crisis",
+       caption = "Source: USAID Foreign Aid Explorer and Security Assistance Monitor data, 2010-2017", 
+       x = "Fiscal Year",
+       fill='Province') + theme(
+         plot.title = element_text(color="black", size=14, face="bold", hjust = 0.5),
+         plot.subtitle = element_text(color="black", size=12, face="italic", hjust =0.5),
+         axis.title.x = element_text(color="black", size=10),
+         axis.title.y = element_text(color="black", size=10),
+         plot.caption = element_text(color="black", size=8, face="italic"))
 
 ggsave('USaidHonduras.pdf', path="Visualizations/", width=9, height=9, units='in')
 

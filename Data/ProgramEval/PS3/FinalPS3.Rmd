@@ -1,0 +1,143 @@
+---
+title: "PSet 3"
+author:
+date: "11/10/2018"
+output: 
+  pdf_document:
+    latex_engine: xelatex
+---
+
+## ID 2174137
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r packages, include=FALSE}
+install.packages("rmarkdown", repos = "http://cran.us.r-project.org")
+install.packages("MASS", repos = "http://cran.us.r-project.org")
+install.packages("stargazer", repos = "http://cran.us.r-project.org")
+install.packages("lmtest", repos = "http://cran.us.r-project.org")
+install.packages("readstata13", repos = "http://cran.us.r-project.org")
+library(readstata13)
+library(lmtest)
+library(stargazer)
+setwd("/Users/mariomoreno/Desktop/Grad School/ProgramEval/PS3")
+dset <- read.dta13('ASQJE.dta')
+```
+
+## 1. For this question, restrict your analysis to the set of job applications that asked about criminal records (“Box” applications) in the before period (“pre-BTB” period). (Note: there are some applications that did not have a box in the pre-BTB period, but then added them in the post- period. Agan and Star code these as “remover = -1” in their data and call them “reverse compliers.” Exclude these observations from your analysis throughout this assignment.)
+
+```{r subsetting data q1, include=FALSE}
+newset <- subset(dset, crimbox==1 & pre==1 & remover!= -1)
+```
+
+### a) What is the average callback rate for people who committed crimes? For those who didn’t? Is the difference statistically significant?
+
+```{r average callback}
+crime <- subset(newset, crime==1)
+nocrime <- subset(newset, crime==0)
+t.test(crime$response, nocrime$response)
+```
+
+##### The average callback rate for people who committed crimes is 8.46%, while the average call back rate for those who did not commit a crime is 13.57%. Since the t-statistic is greater than 2, and the p-value is small, we can reject the null hypothesis of no difference between the means. Though we haven't proven that they're different, we can reject the idea that the means are not identical.
+
+### b) Can we interpret this as a causal effect? Explain briefly.
+
+##### We cannot interpret interpret this as a causal effect given that in this analysis, we're ignoring a whole host of other observable characteristics that might be relevant. There might be other characteristics in the data that are correlated with criminality, which means that in order to establish a causal argument, we need to analyze the other observable traits of the data.
+
+## 2) Now consider just the “Box” applications but include both the pre- and post-BTB periods.
+
+```{r subsetting data q2, include=FALSE}
+q2set <- subset(dset, remover==1)
+```
+
+### a) Regress callback rates on race, GED, and employment gap. Include “chain”1 and “center” fixed effects. Does race appear to have an effect on callback rates? Does this coefficient have a causal interpretation?
+
+```{r fixed effects q2}
+FEReg_white <- lm(response ~ white + ged + empgap + factor(cogroup_comb) + factor(center), data = q2set)
+FEReg_black <- lm(response ~ black + ged + empgap + factor(cogroup_comb) + factor(center), data = q2set)
+stargazer(FEReg_white, FEReg_black, type='text', title='Callback Rates on Race')
+```
+
+##### Given the tables above, race does appear to have an effect on callback rates when including fixed effects. For employers that asked for criminal records both before the BTB policy change but not after (since we subsetted out non-compliers), being white is associated with a 2.4% increase on callbacks, while being black is associated with a 2.4% decrease on callbacks. Both effects are statistically significant, while GED and employment gap are not, thus indicating that race could be a causal mechanism for callback rates for these companies. 
+
+### b) Estimate the model again, but without the chain and center fixed effects. Does the coefficient on “white” change? Why is it important to include chain and center fixed effects?
+
+```{r no fixed effects q2}
+reg.white <- lm(response ~ white + ged + empgap, data = q2set)
+reg.black <- lm(response ~ black + ged + empgap, data = q2set)
+stargazer(reg.white, reg.black, type='text', title='Callback Rates on Race w/o FE')
+```
+
+##### Generally, including fixed effects reduces bias by controlling, in this case, for the center that a person is applying from and the chain store they are applying to. The coefficient on white changes very slightly, this indicates that the center that a white person is applying from has no significant bearing on the callback rates as it relates to race, and neither does the chain store that a white person is applying to. In so many words, being white is associated with the same rate of callbacks independent of which center they apply from, or which chain store they apply to. 
+
+### c) Now add the “conviction” variable. What happens to the coefficient on “white”? If the coefficient changes, does this mean that the previous regression was subject to omitted variable bias?
+
+```{r conviction q2}
+reg.whiteomv <- lm(response ~ white + ged + empgap + crime, data = q2set)
+stargazer(reg.whiteomv, type='text', title='Callback Rates on Race w/Conviction')
+```
+
+##### The coefficient on white doesn't change that much, it shifts from 2.4% to 2.5%. Though the change is small, it is an increase in callback rates for white men once you control for conviction. This indicates that there might be a slight ommitted variable bias effect -- as you control for the criminal history of an applicant, the callback rate goes up slightly, which is a result we would expect. 
+
+## 3) The authors estimate the following model for different subsets of the data, where “Box” is an indicator for whether the application had a box asking about employment2, and X is a vector of covariates:
+
+### a) Suppose they run this regression on the full sample, which includes both Box and non- Box applications, but only in the pre-period (don’t actually do this yet). What do α, β_1, β_2, and β_3 tell you?
+
+##### If an employer includes a box on an application prior to the 'Ban the Box' initiative, the variables mean the following: 
+##### 1) Intercept value is the expected mean value of callbacks prior to the policy change when an individual is not white and the application does not have a box.
+##### 2) The beta one value indicates the size of the pre-policy effect on callback rates if the application has a box.
+##### 3) The beta two value indicates the size of the pre-policy effect on callback rates if the applicant is white
+##### 4) The beta three value indicates the size of the pre-policy effec on callback rates if the applicant is white and there is a box on the application.
+
+### b) Do you think “Box” and “non-Box” stores might differ in systematic ways, besides their decision to include a box asking about criminal history? In other words, do we think this variable is “as-if” randomly assigned?
+
+##### Yes, I think Box and non-Box stores differ in systematic ways. For example, I think a Box Store is more likely to be a retail store that wants to make sure it's protecting inventory by not hiring individuals with criminal records, particularly theft-related histories; meanwhile a non-box store is more likely to be a food-service job that tends to have significant turnover and where perceived criminal proclivities might not be as damaging to the business. Due to those differences, it could be the case that a Box store is located in more upscale neighborhoods where it might beehove them to incude the box, while a large, non-Box store could be located in tougher neighborhoods where including a box could limit the pool of applicants. 
+
+### c) Suppose they run the regression on just the “Box” applications in both periods (again, don’t do this yet). What is the interpretation of the coefficients now?
+
+##### If the regression is run on a subset of the sample that's just application with the box, this means that we're only taking into account businesses that actively want to have the box in the pre-period, but that don't have it in the post-period (since we subsetted out non-compliers). In that case, the variables mean the following: 
+##### 1)  Intercept value is the expected mean value of callbacks for non-white applicants.
+##### 2) The beta one variable is the difference in callback rates associated with companies that had a box in the pre-period and those that did not in the post-period.  
+##### 3) The beta two variable in this scenario indicates size of the effect on callback rates if the applicant is white.
+##### 4) The beta three variable is the size of the effect on callback rates for a white applicant given an application with a box. 
+
+## 4) For the below estimations, include controls for employment gap and ged, as well as center fixed effects. Again, exclude the so-called “reverse compliers.”
+
+```{r subset q4a, include=FALSE}
+preset <- subset(dset, pre==1 & remover!=-1)
+```
+
+### a) Estimate the model from question 3 on both “Box” and non-“Box” applications in just the pre-period.
+
+```{r regr q4}
+regr.pre <- lm(response ~ crimbox + white + ged + empgap + (crimbox * white) + factor(center), data = preset)
+summary(regr.pre, cluster=c("chain_id"))
+```
+
+### b) What kind of standard errors should you use, and why?
+
+##### You should use chain-clustered standard errors, since the chain is likely correlated with the chance of getting a callback. Indeed, since chains are the units by which applications were clustered, it's likely the errors in those groups are correlated with each other. Not clustering might lead to underestimating our errors. 
+
+### c) Is the coefficient on “crimbox” statistically significant? What about “white” and the interaction of “crimbox” and “white”? Interpret these findings.
+
+##### The coefficient on crimbox is not statistically significant, while the coeffecient on white is statistically significant. The interaction coefficient is similarly statistically significant but at a lesser rate (p < 0.001 vs p < 0.05). Essentially, this means that in the period prior to Ban the Box, the fact that certain applications had a box did not have a significant effect in callback rates, but that being white improved callback rates by 3.1%. The interaction coefficient, which doesn't meet criteria for statistical significance at p <0.001 but it does at p < 0.01, hints that a white candidate would have a lower callback rate if the application had a box. 
+
+### d) Now estimate the model from question 3 on just “Box” applications in both periods. Interpret the coefficients.
+
+```{r subset q4d, include=FALSE}
+boxset <- subset(dset, remover==1)
+```
+
+```{r regr2 q4}
+regr.box <- lm(response ~ crimbox + white + ged + empgap + (crimbox * white) + factor(center), data = boxset)
+summary(regr.box, cluster=c("chain_id"))
+```
+
+##### There only statistically significant result in this regression is the coefficient for white, which indicates that being white is associated with a 4% increase in callback rates for companies with the box in the pre-period, and without the box in the post-period.  
+
+## 5. Based on the above analysis, what are your conclusions about the effects of BTB?
+
+##### From the results above, it appears that ban-the-box did not have the desired effect in helping reduce unemployment among black men, who comprise a disproportionate amount of indiviudals in the criminal justice system. In fact, from the analysis above it appears that being black is associated with lower callback rates in this data (see 2a), while being white is associated with increases in callback rates in the post BTB period. This seems to indicate that post-BTB, employers relied on preconceived notions about race and criminality in order to make assumptions about the criminal histories of the applicants.  
+
+#  Mario Moreno
