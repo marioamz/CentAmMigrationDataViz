@@ -89,20 +89,20 @@ for(file in files)
 }
 
 # Add country identifiers
-elsdev2014usa$pais <- 'El Salvadorean migrants'
-elsdev2015usa$pais <- 'El Salvadorean migrants'
-elsdev2016usa$pais <- 'El Salvadorean migrants'
-elsdev2017usa$pais <- 'El Salvadorean migrants'
+elsdev2014usa$pais <- 'Price paid by El Salvadorean migrants'
+elsdev2015usa$pais <- 'Price paid by El Salvadorean migrants'
+elsdev2016usa$pais <- 'Price paid by El Salvadorean migrants'
+elsdev2017usa$pais <- 'Price paid by El Salvadorean migrants'
 
-honddev2014usa$pais <- 'Honduran migrants'
-honddev2015usa$pais <- 'Honduran migrants'
-honddev2016usa$pais <- 'Honduran migrants'
-honddev2017usa$pais <- 'Honduran migrants'
+honddev2014usa$pais <- 'Price paid by Honduran migrants'
+honddev2015usa$pais <- 'Price paid by Honduran migrants'
+honddev2016usa$pais <- 'Price paid by Honduran migrants'
+honddev2017usa$pais <- 'Price paid by Honduran migrants'
 
-guatedev2014usa$pais <- 'Guatemalan migrants'
-guatedev2015usa$pais <- 'Guatemalan migrants'
-guatedev2016usa$pais <- 'Guatemalan migrants'
-guatedev2017usa$pais <- 'Guatemalan migrants'
+guatedev2014usa$pais <- 'Price paid by Guatemalan migrants'
+guatedev2015usa$pais <- 'Price paid by Guatemalan migrants'
+guatedev2016usa$pais <- 'Price paid by Guatemalan migrants'
+guatedev2017usa$pais <- 'Price paid by Guatemalan migrants'
 
 # subset dataframes
 e2014 <- elsdev2014usa[c('year', 'pais', 'p17_1c', 'p17_1u')]
@@ -127,7 +127,7 @@ slopegraph <- do.call("rbind", list(e2014, e2015, e2016, e2017, h2014, h2015, h2
 rm(e2014, e2015, e2016, e2017, h2014, h2015, h2016, h2017, g2014, g2015, g2016, g2017)
 ```
 
-In the midst of a raging national debate on migration and refugees, plenty has been written about the changing profile of undocumented migrants reaching the US-Mexico border. While traditionally, Mexican migrants have been the predominant demographic group seeking to enter the United States through the southern border, that dynamic has shifted in the last decade. Central American migrants originating in the Northern Triangle countries of El Salvador, Guatemala, and El Salvador have become the predominant demographic of undocumented migrants seeking to enter the United States. 
+In the midst of a raging national debate on migration and refugees, plenty has been written about the changing profile of undocumented migrants reaching the US-Mexico border. While traditionally, Mexican migrants have been the predominant demographic group seeking to enter the United States through the southern border, that dynamic has shifted in the last decade. Central American migrants originating in the Northern Triangle countries of El Salvador, Guatemala, and Honduras have become the predominant demographic of undocumented migrants seeking to enter the United States. 
 
 ```{r refugees, warning=FALSE}
 # Calulcate the percent of people who've considered emigration over time
@@ -165,7 +165,7 @@ plot + labs(title = "More people are planning to emigrate \n from Honduras than 
 rm(new, f, plot)
 ```
 
-As evidenced by the graph above, this surge in Central American migration is evident in the percentage of citizens of Central Americans countries who are planning to emigrate in the next three years. Notably, in all three countries, the percentage of citizens planning to emigrate has considerably increased since 2012 -- with the percentage of Hondurans planning to make the trip out of the country rising from 12% in 2012 to 40% in 2016. 
+As evidenced by the graph above, this surge in Central American migration is evident in the percentage of citizens of Central American countries who are planning to emigrate in the next three years. Notably, in all three countries, the percentage of citizens planning to emigrate has considerably increased since 2012 -- with the percentage of Hondurans planning to make the trip out of the country rising from 12% in 2012 to 40% in 2016. 
 
 Media outlets and researchers often cite a range of push and pull factors driving this emigration. Generally speaking, violence and lack of economic opportunity are cited as two prominent push factors; while family reunification is often cited as a pull factor. 
 
@@ -266,7 +266,7 @@ rm(to_plot_ff, plot)
 
 However, as the graph above shows, it appears that in Honduras -- the country that's seen the largest increases in its citizens planning to emigrate -- a lack of economic opportunity is driving emigration. In the Honduran states where more than 40% of survey respondents plan to emigrate in the next three years, it's clear that more respondents feel their economic prospects have worsened. In the state of Colón for instance, more than 50% of the population wants to emigrate, more than 50% feel that their economic prospects have worsened, and only 20% feel that their neighborhood is very unsafe from crime. 
 
-Even as it appears that Central American migrants specifically are fleeing poverty, they often face significant economic challenges as they try to make it to the United States. Often, in order to secure a safe passage from the Guatemala-Mexico border to the US-Mexico border, these migrants will secure the assistance of 'coyotes,' members of criminal organizations that guide them in their journey. 
+Even as it appears that Honduran migrants are fleeing poverty more than violence, they face additional economic burdens as they try to make it to the United States. Often, in order to secure a safe passage from the Guatemala-Mexico border to the US-Mexico border, these migrants will secure the assistance of 'coyotes,' members of criminal organizations that guide them in their journey. 
 
 
 ```{r cost, warning = FALSE}
@@ -318,7 +318,7 @@ ggplot(data = tograph, aes(x = year, y = mean_spent, group = pais)) +
   theme(plot.subtitle    = element_text(hjust = 0.5)) +
   #  Labelling as desired
   labs(
-    title = "Price paid by Honduran migrants to the coyotes successfully \n trafficking them through Mexico has increased since 2014",
+    title = "Honduran migrants have experienced marked increases in \n the price of hiring a coyote to guide them through Mexico",
     subtitle = "Guatemalan migrants have experienced similar increases, \n but Salvadorean migrants have paid less for a successful trip",
     caption = "Source: EMIF Sur (2014-2017)"
   )
@@ -405,7 +405,7 @@ ggplot(touse,
 rm(touse)
 ```
 
-The graph above, which shows the paths that Honduran migrants take within Mexico, shows that there some slight differences in the paths that deported migrants and non-deported migrants take. Namely, migrants entering Mexico through Bethel tend to all be deported, while migrants who make a stop in Chiapa de Corso tend to all make it to the US-Mexico border. Additionally, it seems that deported migrants tend to be caught in cities either near the US-Mexico border or on the Gulf of Mexico, while migrants that manage to make it safely through those cities often wind up making it to Reynosa, where they cross into the United States. 
+The graph above, which shows the paths that Honduran migrants take within Mexico, shows that there are some slight differences in the paths that deported migrants and non-deported migrants take. Namely, migrants entering Mexico through Bethel tend to all be deported, while migrants who make a stop in Chiapa de Corso tend to all make it to the US-Mexico border. Additionally, it seems that deported migrants tend to be caught in cities either near the Guatemala-Mexico border or on the Gulf of Mexico, while migrants that manage to make it safely through those cities often wind up making it to Reynosa, where they cross into the United States. 
 
 In addition to deportation, Central American migrants working their way through Mexico face significant dangers. For that reason, academic experts and migrants rights advocates have often called for more investment in Northern Triangle countries to reduce violence, create more economic opportunity, and incentivize potential migrants to stay home. 
 

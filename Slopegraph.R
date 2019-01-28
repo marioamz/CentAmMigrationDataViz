@@ -18,20 +18,20 @@ for(file in files)
 }
 
 # Add country identifiers
-elsdev2014usa$pais <- 'El Salvadorean migrants'
-elsdev2015usa$pais <- 'El Salvadorean migrants'
-elsdev2016usa$pais <- 'El Salvadorean migrants'
-elsdev2017usa$pais <- 'El Salvadorean migrants'
+elsdev2014usa$pais <- 'Price paid by El Salvadorean migrants'
+elsdev2015usa$pais <- 'Price paid by El Salvadorean migrants'
+elsdev2016usa$pais <- 'Price paid by El Salvadorean migrants'
+elsdev2017usa$pais <- 'Price paid by El Salvadorean migrants'
 
-honddev2014usa$pais <- 'Honduran migrants'
-honddev2015usa$pais <- 'Honduran migrants'
-honddev2016usa$pais <- 'Honduran migrants'
-honddev2017usa$pais <- 'Honduran migrants'
+honddev2014usa$pais <- 'Price paid by Honduran migrants'
+honddev2015usa$pais <- 'Price paid by Honduran migrants'
+honddev2016usa$pais <- 'Price paid by Honduran migrants'
+honddev2017usa$pais <- 'Price paid by Honduran migrants'
 
-guatedev2014usa$pais <- 'Guatemalan migrants'
-guatedev2015usa$pais <- 'Guatemalan migrants'
-guatedev2016usa$pais <- 'Guatemalan migrants'
-guatedev2017usa$pais <- 'Guatemalan migrants'
+guatedev2014usa$pais <- 'Price paid by Guatemalan migrants'
+guatedev2015usa$pais <- 'Price paid by Guatemalan migrants'
+guatedev2016usa$pais <- 'Price paid by Guatemalan migrants'
+guatedev2017usa$pais <- 'Price paid by Guatemalan migrants'
 
 # subset dataframes
 e2014 <- elsdev2014usa[c('year', 'pais', 'p17_1c', 'p17_1u')]
@@ -103,7 +103,7 @@ ggplot(data = tograph, aes(x = year, y = mean_spent, group = pais)) +
   theme(plot.subtitle    = element_text(hjust = 0.5)) +
   #  Labelling as desired
   labs(
-    title = "Price paid by Honduran migrants to the coyotes successfully \n trafficking them through Mexico has increased since 2014",
+    title = "Honduran migrants have experienced marked increases in the price \n of hiring a coyote to guide them through Mexico",
     subtitle = "Guatemalan migrants have experienced similar increases, \n but Salvadorean migrants have paid less for a successful trip",
     caption = "Source: EMIF Sur (2014-2017)"
   )
