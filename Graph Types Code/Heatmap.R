@@ -1,4 +1,5 @@
 # Heatmap of percent of people willing to emigrate per country over time
+### Might want to consider doing it for provinces
 
 ## Read in data
 install.packages("ggplot2")
