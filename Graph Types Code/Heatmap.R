@@ -45,18 +45,20 @@ to_graph <- inter %>%
 
 ## Put into a heatmap
 
-mario_theme <- theme(plot.title = element_text(color='#7a0177', size=14, face='bold'),
+mario_theme <- theme(text = element_text(family='sans'),
+                     plot.title = element_text(color='#7a0177', size=14, face='bold'),
                      plot.subtitle = element_text(color='black', size=12, face='italic'), 
                      axis.title.x = element_text(color='black', size=10),
                      axis.title.y = element_text(color='black', size=10), 
                      plot.caption = element_text(color='grey', size=8),
                      legend.title = element_text(face='bold', size=8),
                      legend.position = 'bottom', legend.direction = 'horizontal', legend.box = 'horizontal', 
-                     legend.key.size = unit(0.5, 'cm'),
-                     panel.background = element_blank()) 
+                     legend.key.size = unit(0.5, 'cm')) 
 
-plot <- ggplot(to_graph, aes(x=as.factor(year), y=pais, fill=perc)) + geom_tile(aes(fill=perc)) + geom_text(aes(label=round(perc, 1), fontface='bold')) + scale_fill_gradient(low='#feebe2', high='#7a0177') 
-labels <- labs(title = 'Since 2012, the percentage of Honduran residents planning to emigrate has increased nearly 30%',
+mario_scale_cont <- scale_fill_gradient(low='#feebe2', high='#7a0177')
+
+plot <- ggplot(to_graph, aes(x=as.factor(year), y=pais, fill=perc)) + geom_tile(aes(fill=perc)) + geom_text(aes(label=round(perc, 1), fontface='bold')) + mario_scale_cont 
+labels <- labs(title = 'Since 2012, the percentage of Honduran residents planning to emigrate \n has increased nearly 30%',
                subtitle = 'Across the region, there are notable increases in plans to emigrate since 2012',
                caption = 'Source: LAPOP 2010-2016',
                x = 'Year',
