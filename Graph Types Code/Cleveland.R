@@ -44,7 +44,9 @@ emigrate <- subemigrate %>%
   group_by(year, prov) %>%
   arrange(q14) %>%
   slice(1)  %>%
-  select(year, prov, perc)
+  select(year, prov, perc) %>%
+  group_by(year, prov) %>%
+  arrange(desc(perc))
 
 
 
@@ -54,29 +56,54 @@ emigrate$prov[emigrate$prov=='AtlÃ¡ntida'] <- "Atlántida"
 emigrate$prov[emigrate$prov=='ColÃ³n'] <- "Colón"
 emigrate$prov[emigrate$prov=='CopÃ¡n'] <- "Copán"
 emigrate$prov[emigrate$prov=='CortÃ©s'] <- "Cortés"
-emigrate$prov[7] <- "El Paraíso"
+emigrate$prov[33] <- "El Paraíso"
 emigrate$prov[emigrate$prov=='Francisco MorazÃ¡n'] <- "Francisco Morazán"
 emigrate$prov[emigrate$prov=='IntibucÃ¡'] <- "Intibucá"
 emigrate$prov[11] <- "Islas de la Bahía"
 emigrate$prov[emigrate$prov=='Santa BÃ¡rbara'] <- "Santa Bárbara"
 
-x <- with(emigrate, tapply(perc, list(prov, year) , I)  )
-y <- as.data.frame(na.omit(x))
-graph_emigrate <- add_rownames(y, "prov")
-rm(x, y, subemigrate, emigrate)
-
-colnames(graph_emigrate)[colnames(graph_emigrate)==2010] <- "perc2010"
-colnames(graph_emigrate)[colnames(graph_emigrate)==2016] <- "perc2016"
-
-final_emigrate <- graph_emigrate %>%
-  arrange(desc(perc2016))
-
 ## Plot
 
-ggplot(final_emigrate) +
-  geom_segment( aes(x=prov, xend=prov, y=perc2010, yend=perc2016), color="grey") +
-  geom_point( aes(x=prov, y=perc2010), color=rgb(0.2,0.7,0.1,0.5), size=3 ) +
-  geom_point( aes(x=prov, y=perc2016), color=rgb(0.7,0.2,0.1,0.5), size=3 ) +
-  coord_flip() 
+# to add labels to plot
+right_label <- emigrate %>%
+  filter(year == 2016)
+
+left_label <- emigrate %>%
+  filter(year == 2010)
+
+# to highlight only those greater than 30%
+diff <- emigrate %>%
+  spread(year, perc) %>%
+  group_by(prov) 
+
+colnames(diff)[colnames(diff)==2010] <- "perc2010"
+colnames(diff)[colnames(diff)==2016] <- "perc2016"
+  
+diff_use <- diff %>%
+  mutate(change = perc2016 - perc2010) %>%
+  arrange(change) %>%
+  filter(change > 30)
+
+right_label <- right_label %>%
+  filter(prov %in% diff_use$prov)
+
+left_label <- left_label %>%
+  filter(prov %in% diff_use$prov)
+
+highlight <- emigrate %>%
+  filter(prov %in% diff_use$prov)
 
 
+# Actually plot
+
+plot <- ggplot(emigrate, aes(perc, prov)) +
+  geom_point(colour = alpha('grey', 0.7)) +#aes(color = year)) + 
+  geom_line(aes(group=prov), colour = alpha('grey', 0.7)) + 
+  geom_line(data = highlight, aes(group = prov)) +
+  geom_point(data = highlight, aes(color = year), size = 2) +
+  #geom_text(data = diff_use, aes(color = 'red', label = round(change, 0)),
+   #         size = 3, hjust = -.5) #+
+  geom_text(data = left_label, aes(color = year, label = round(perc, 0)),
+            size = 3, hjust = 1.5) 
+
+plot
