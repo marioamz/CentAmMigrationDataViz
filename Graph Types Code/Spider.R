@@ -3,10 +3,12 @@
 install.packages("ggplot2")
 install.packages("tidyverse")
 install.packages('ggradar')
+install.packages('car')
 
 library(tidyverse)
 library(gtools)
 library(ggradar)
+library(car)
 
 els <- read.csv('Data/elsLAPOP.csv', encoding = 'latin1')
 guate <- read.csv('Data/guateLAPOP.csv', encoding='latin1')
@@ -27,9 +29,15 @@ final <- smartbind(h, b)
 
 rm(cols_to_keep, g, e, h, b, bind)
 
+
+
+final$a4 <- recode(final$a4,"c(30,5, 12, 14, 31, 27, 57)='Crime/Violence';c(9, 3, 58, 26, 1, 2, 4, 55)='Economy'; c(19, 18, 25, 21, 24, 59, 15, 6, 7, 60) = 'Gov/Services'; c(23, 11, 10, 22, 20)='Health'; c(30, 13, 56, 32, 17, 61, 16, 33)='Corruption/Conflict'")
+
+
 ## Get data ready
 
 sub <- final %>% 
+  filter(a4 != 70, a4 != 4704, a4 != 4701, a4 != 4702) %>%
   select(pais, year, a4) %>%
   na.omit() %>%
   group_by(pais, year) %>% 
@@ -42,34 +50,11 @@ sub_to_graph <- sub %>%
   select(pais, year, a4, perc) %>%
   group_by(pais, year) %>%
   arrange(desc(perc),.by_group=TRUE) %>%
-  distinct(pais, year, a4, perc) %>%
-  slice(1:3) 
+  distinct(pais, year, a4, perc) 
 
 sub_to_graph$perc <- sub_to_graph$perc * 100
 
-sub_to_graph$a4[sub_to_graph$a4 == 5] <- 'Crime'
-sub_to_graph$a4[sub_to_graph$a4 == 1] <- 'Economy'
-sub_to_graph$a4[sub_to_graph$a4 == 4] <- 'Poverty'
-sub_to_graph$a4[sub_to_graph$a4 == 57] <- 'Violence'
-sub_to_graph$a4[sub_to_graph$a4 == 3] <- 'Unemployment'
-sub_to_graph$a4[sub_to_graph$a4 == 70] <- 'Other'
-sub_to_graph$a4[sub_to_graph$a4 == 14] <- 'Gangs'
-sub_to_graph$a4[sub_to_graph$a4 == 27] <- 'Security'
-sub_to_graph$a4[sub_to_graph$a4 == 13] <- 'Corruption'
-sub_to_graph$a4[sub_to_graph$a4 == 18] <- 'Roads'
-
-
-
-
-
-to_graph <- dcast(sub_to_graph, pais~a4)
-
 rm(sub, sub_to_graph)
-
-to_graph[is.na(to_graph)] <- 0
-cols <- sapply(to_graph, is.numeric)
-to_graph[, cols] <- to_graph[, cols] * 100
-rm(cols)
 
 
 
