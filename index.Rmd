@@ -226,8 +226,6 @@ Within Honduras, the country that's seen the most marked increase in people plan
 
 ```{r provinces, warning=FALSE}
 
-## Subset to have emigration question (aoj11)
-
 subemigrate <- hondLAPOP %>%
   select(year, prov, q14) %>%
   filter(year != 2012, year != 2014, prov != 414, prov != 415, prov != 416, prov != 417) %>%
@@ -247,6 +245,8 @@ emigrate <- subemigrate %>%
   select(year, prov, perc) %>%
   group_by(year, prov) %>%
   arrange(desc(perc))
+
+
 
 ## Stupid encodings don't work
 
@@ -276,45 +276,31 @@ diff <- emigrate %>%
 
 colnames(diff)[colnames(diff)==2010] <- "perc2010"
 colnames(diff)[colnames(diff)==2016] <- "perc2016"
-  
+
 diff_use <- diff %>%
-  mutate(change = perc2016 - perc2010) %>%
-  arrange(change) %>%
+  mutate(change = perc2016 - perc2010)  
+
+highlight <- diff_use %>%
   filter(change > 30)
 
-right_label <- right_label %>%
-  filter(prov %in% diff_use$prov)
-
-left_label <- left_label %>%
-  filter(prov %in% diff_use$prov)
-
-highlight <- emigrate %>%
-  filter(prov %in% diff_use$prov)
-
-change <- merge(right_label, diff_use, by='prov')
-
-# Actually plot
-
-plot <- ggplot(emigrate, aes(perc, prov)) +
-  geom_point(colour = alpha('grey', 0.7)) +
-  geom_line(aes(group=prov), colour = alpha('grey', 0.7)) + 
-  geom_line(data = highlight, aes(group = prov)) +
-  geom_point(data = highlight, aes(color = year), size = 2) +
-  scale_color_gradient(low='#df65b0', high='#67001f') +
-  geom_text(data = change, aes(label = paste0('+', round(change, 0))),
-            size = 3, hjust = -.2) 
-
 labels <- labs(title = "Most Honduran provinces saw increases in \n respondents planning to emigrate from \n 2010 to 2016",
-     subtitle = "Out of 18 provinces, three experienced a 30% or greater increase \nin respondents planning to emigrate in the next three years.",
-     caption = 'Source: LAPOP 2010-2016') 
+               subtitle = "Out of 18 provinces, three experienced a 30% or greater increase \nin respondents planning to emigrate in the next three years.",
+               caption = 'Source: LAPOP data 2010-2016') 
 
-update_themes <- 
-  theme(axis.title = element_blank(),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor = element_blank(),
-        legend.position = 'none') 
+diff_use %>%
+  arrange(change) %>%
+  ggplot( aes(x=prov, y=change)) +
+  geom_segment( aes(x=prov, xend=prov, y=0, yend=change), color="grey", size=1) +
+  geom_point( color="grey", size=4, alpha=0.6) +
+  geom_segment(data=highlight, aes(x=prov, xend=prov, y=0, yend=change), color = '#df65b0') +
+  geom_point(data=highlight, size=4, color = '#67001f') +
+  geom_text(data = highlight, aes(label = paste0('+', round(change, 0))),
+            size = 3, hjust = -.5, color = '#67001f')  +
+  coord_flip() +
+  xlab("") +
+  ylab("Percent Change from 2010 to 2016") + labels + theme_minimal() + mario_theme +  theme(panel.grid.major.x = element_blank(),
+panel.grid.minor = element_blank())
 
-plot + labels + theme_minimal() + mario_theme + update_themes
 
 ```
 
