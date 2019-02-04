@@ -105,5 +105,21 @@ plot <- ggplot(emigrate, aes(perc, prov)) +
   geom_text(data = change, aes(label = round(change, 0)),
             size = 3, hjust = -.5) 
 
-labels <- 
-plot
+labels <- labs(title = "Most Honduran provinces saw increases in respondents \n planning to emigrate from 2010 to 2016",
+     subtitle = "Out of 18 provinces, three experienced a 30% or greater increase \nin respondents planning to emigrate in the next three years.") 
+
+themes <- theme_minimal() +
+  theme(axis.title = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.title = element_blank(),
+        legend.justification = c(0, 1), 
+        legend.position = 'bottom',
+        legend.background = element_blank(),
+        legend.direction="horizontal",
+        text = element_text(family = "Georgia"),
+        plot.title = element_text(size = 20, margin = margin(b = 10)),
+        plot.subtitle = element_text(size = 10, color = "darkslategrey", margin = margin(b = 25)),
+        plot.caption = element_text(size = 8, margin = margin(t = 10), color = "grey70", hjust = 0))
+
+plot + labels + themes
