@@ -398,7 +398,7 @@ plot <- ggplot(to_plot_ff,
   geom_text_repel(aes(label=prov)) + scale_color_distiller(name = '% planning to emigrate', palette='RdPu', trans='reverse') #+ 
   #scale_y_continuous(limits = c(0, 60)) + expand_limits(x=0)
 
-labels <- labs(title = "In Honduran provinces with largest percentage \n of people planning to emigrate, economic concerns prevail",
+labels <- labs(title = "In Honduran provinces with largest percentage \n of people planning to emigrate, \n economic concerns prevail",
             subtitle = "Economics might be playing a larger push role than violence",
             caption = "Source: LAPOP Honduras data 2017", 
             x = "% who feel economic prospects have worsened", y = "% who feel very unsafe from crime",
@@ -462,7 +462,7 @@ updated_theme <-
   theme(axis.ticks       = element_blank()) + theme(panel.background = element_blank())
   #  Labelling as desired
 labels <- labs(
-    title = "Honduran migrants have experienced marked increases in the price of \n hiring a coyote to guide them through Mexico",
+    title = "Honduran migrants have experienced marked increases \n in the price of hiring a coyote to guide them \n through Mexico",
     subtitle = "Guatemalan migrants have experienced similar increases, but Salvadorean migrants \n have paid less for a successful trip",
     caption = "Source: EMIF Sur (2014-2017)"
   )
@@ -510,7 +510,8 @@ plot <- ggplot(melt, aes(x=variable, y=value, fill=pais)) + geom_bar(width = 1, 
   scale_fill_brewer(palette='RdPu')+ xlab("") + ylab("Percent facing challenge")
 
 labels <- labs(title='Honduran migrants are more likely \n to be robbed, while Salvadorean \n migrants face extreme cold',
-subtitle='Hondurans pay more for coyotes, but are \n the only group likely to be abandoned by them or get lost')
+subtitle='Hondurans pay more for coyotes, but are \n the only group likely to be abandoned by them or get lost',
+caption='Source: EMIF Sur(2014-2107)')
 
 plot + labels + mario_theme 
 
