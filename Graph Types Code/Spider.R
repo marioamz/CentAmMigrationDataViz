@@ -2,12 +2,10 @@
 
 install.packages("ggplot2")
 install.packages("tidyverse")
-install.packages('ggradar')
 install.packages('car')
 
 library(tidyverse)
 library(gtools)
-library(ggradar)
 library(car)
 
 els <- read.csv('Data/elsLAPOP.csv', encoding = 'latin1')
@@ -31,26 +29,26 @@ rm(cols_to_keep, g, e, h, b, bind)
 
 
 
-final$a4 <- recode(final$a4,"c(5, 12, 14, 31, 27, 57)='Crime/Violence';c(9, 3, 58, 26, 1, 2, 4, 55)='Economy'; c(19, 18, 25, 21, 24, 59, 15, 6, 7, 60) = 'Gov/Services'; c(23, 11, 10, 22, 20, 25)='Health/Social Issues'; c(30, 13, 56, 32, 17, 61, 16, 33)='Corruption/Conflict'")
+hond$a4 <- recode(hond$a4,"c(5, 12, 14, 31, 27, 57)='Crime/Violence';c(9, 3, 58, 26, 1, 2, 4, 55)='Economy'; c(19, 18, 25, 21, 24, 59, 15, 6, 7, 60) = 'Gov/Services'; c(23, 11, 10, 22, 20, 25)='Health/Social Issues'; c(30, 13, 56, 32, 17, 61, 16, 33)='Corruption/Conflict'")
 
 
 ## Get data ready
 
-sub <- final %>% 
+sub <- hond %>% 
   filter(a4 != 70, a4 != 4704, a4 != 4701, a4 != 4702) %>%
-  select(pais, year, a4) %>%
+  select(prov, year, a4) %>%
   na.omit() %>%
-  group_by(pais, year) %>% 
+  group_by(prov, year) %>% 
   add_tally %>% 
   add_count(a4)
 
 sub$perc <- sub$nn / sub$n
 
 sub_to_graph <- sub %>%
-  select(pais, year, a4, perc) %>%
-  group_by(pais, year) %>%
+  select(prov, year, a4, perc) %>%
+  group_by(prov, year) %>%
   arrange(desc(perc),.by_group=TRUE) %>%
-  distinct(pais, year, a4, perc) 
+  distinct(prov, year, a4, perc) 
 
 sub_to_graph$perc <- sub_to_graph$perc * 100
 
