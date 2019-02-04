@@ -93,6 +93,7 @@ left_label <- left_label %>%
 highlight <- emigrate %>%
   filter(prov %in% diff_use$prov)
 
+change <- merge(right_label, diff_use, by='prov')
 
 # Actually plot
 
@@ -101,9 +102,8 @@ plot <- ggplot(emigrate, aes(perc, prov)) +
   geom_line(aes(group=prov), colour = alpha('grey', 0.7)) + 
   geom_line(data = highlight, aes(group = prov)) +
   geom_point(data = highlight, aes(color = year), size = 2) +
-  #geom_text(data = diff_use, aes(color = 'red', label = round(change, 0)),
-   #         size = 3, hjust = -.5) #+
-  geom_text(data = left_label, aes(color = year, label = round(perc, 0)),
-            size = 3, hjust = 1.5) 
+  geom_text(data = change, aes(label = round(change, 0)),
+            size = 3, hjust = -.5) 
 
+labels <- 
 plot
