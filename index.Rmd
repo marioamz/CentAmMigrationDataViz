@@ -305,7 +305,8 @@ plot <- ggplot(emigrate, aes(perc, prov)) +
             size = 3, hjust = -.2) 
 
 labels <- labs(title = "Most Honduran provinces saw increases in \n respondents planning to emigrate from \n 2010 to 2016",
-     subtitle = "Out of 18 provinces, three experienced a 30% or greater increase \nin respondents planning to emigrate in the next three years.") 
+     subtitle = "Out of 18 provinces, three experienced a 30% or greater increase \nin respondents planning to emigrate in the next three years.",
+     caption = 'Source: LAPOP 2010-2016') 
 
 update_themes <- 
   theme(axis.title = element_blank(),
