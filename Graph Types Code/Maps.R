@@ -1,11 +1,14 @@
 install.packages('sf')
 install.packages('tigris')
+install.packages('gghighlight')
 library(sf)
 library(ggplot2)
 library(dplyr)
 library(tidyverse)
 library(tigris)
 library(gtools)
+library(ggrepel)
+library(gghighlight)
 
 # Read in departmental level shape file 
 honduras_shape <- st_read('Data/HND_adm/HND_adm1.shp')
@@ -36,7 +39,7 @@ rm(cols_to_keep, g, e, h, b, bind)
 
 subemigrate <- final %>%
   select(year, pais, prov, q14) %>%
-  filter(year != 2012, year != 2014, prov != 414, prov != 415, prov != 416, prov != 417, prov != 219) %>%
+  filter(year != 2012, year != 2014, year != 2010, prov != 414, prov != 415, prov != 416, prov != 417, prov != 219) %>%
   na.omit() %>%
   group_by(year, pais, prov) %>%
   add_tally() %>%
@@ -93,23 +96,46 @@ emigrate$prov[emigrate$prov=='SAN SALVADOR'] <- "San Salvador"
 
 diff <- emigrate %>%
   spread(year, perc) %>%
-  group_by(prov) 
+  group_by(prov)
 
-colnames(diff)[colnames(diff)==2010] <- "perc2010"
 colnames(diff)[colnames(diff)==2016] <- "perc2016"
 
-diff_use <- diff %>%
-  mutate(change = perc2016 - perc2010) %>%
-  select(prov, change)
+to_map_hond <- geo_join(honduras_shape, diff, by_sp = 'NAME_1', by_df='prov', how='left')
+#to_map_guate <- geo_join(guate_shape, diff_use, by_sp='NAME_1', by_df='prov', how='left')
+#to_map_els <- geo_join(els_shape, diff_use, by_sp='NAME_1', by_df='prov', how='left')
 
+mario_theme <- theme(text = element_text(family='Georgia'),
+                     plot.title = element_text(size = 20, margin = margin(b = 10)),
+                     plot.subtitle = element_text(size = 10, color = "darkslategrey", margin = margin(b = 25)), 
+                     axis.title.x = element_text(color='darkslategrey', size=8),
+                     axis.title.y = element_text(color='darkslategrey', size=8), 
+                     plot.caption = element_text(size = 8, margin = margin(t = 10), color = "grey70", hjust = 0),
+                     legend.title = element_text(face='bold', size=8),
+                     legend.position = 'bottom', legend.direction = 'horizontal', legend.box = 'horizontal', 
+                     legend.key.size = unit(0.5, 'cm'))
 
-to_map_hond <- geo_join(honduras_shape, diff_use, by_sp = 'NAME_1', by_df='prov', how='left')
-to_map_guate <- geo_join(guate_shape, diff_use, by_sp='NAME_1', by_df='prov', how='left')
-to_map_els <- geo_join(els_shape, diff_use, by_sp='NAME_1', by_df='prov', how='left')
+labels <- labs(title = 'During 2016, more residents in northeastern Honduran \n provinces planned to emigrate than anywhere else',
+subtitle = 'In the northeastern provinces of Colón and Gracias a Dios more than 50% of \n respondents indicated plans to emigrate in the next three years',
+caption = 'Source: LAPOP Honduras, 2010-2016')
+
+updated_theme <- theme(panel.border = element_blank()) +
+  theme(axis.title.y = element_blank()) +
+  theme(axis.text.y = element_blank()) +
+  theme(panel.grid.major.y = element_blank()) +
+  theme(panel.grid.minor.y = element_blank()) +
+  theme(axis.title.x = element_blank()) +
+  theme(panel.grid.major.x = element_blank()) +
+  theme(axis.text.x.top = element_text(size=12)) +
+  theme(axis.ticks = element_blank()) + 
+  theme(panel.background = element_blank())
 
 ggplot() +
   geom_sf(data = to_map_hond) + 
-  geom_sf(data = to_map_hond, aes(fill=change))
+  geom_sf(data = to_map_hond, aes(fill=perc2016)) +
+  gghighlight(perc2016 > 40) + 
+  scale_fill_gradient(low='#feebe2', high='#7a0177') + 
+  labels + mario_theme + updated_theme
+
 
 #+
  # geom_sf(data = to_map_guate) +
