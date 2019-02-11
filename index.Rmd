@@ -171,6 +171,26 @@ honduras_shape <- st_read('Data/HND_adm/HND_adm1.shp')
 guate_shape <- st_read('Data/gadm36_GTM_shp/gadm36_GTM_1.shp')
 els_shape <- st_read('Data/gadm36_SLV_shp/gadm36_SLV_1.shp')
 
+## READ IN FOR MEXICO MAP
+
+# Read Mexico Shapefile
+mex_shape <- st_read('Data/Mex_adm/Mex_adm1.shp')
+
+# Read in Deported from Mexico data
+path <- "Data/"
+files <- list.files(path=path, pattern="*2016mex.csv")
+for(file in files)
+{
+  perpos <- which(strsplit(file, "")[[1]]==".")
+  assign(
+    gsub(" ","",substr(file, 1, perpos-1)), 
+    read.csv(paste(path,file,sep="")))
+}
+
+elsdev2016mex$pais <- 'El Salvador'
+honddev2016mex$pais <- 'Honduras'
+guatedev2016mex$pais <- 'Guatemala'
+
 ```
 ```{r themes, include=FALSE}
 
@@ -693,6 +713,88 @@ rm(touse)
 ```
 
 The graph above, which shows the paths that Honduran migrants take within Mexico, shows that there are some slight differences in the paths that deported migrants and non-deported migrants take. Namely, migrants entering Mexico through Bethel tend to all be deported, while migrants who make a stop in Chiapa de Corso tend to all make it to the US-Mexico border. Additionally, it seems that deported migrants tend to be caught in cities either near the Guatemala-Mexico border or on the Gulf of Mexico, while migrants that manage to make it safely through those cities often wind up making it to Reynosa, where they cross into the United States. 
+
+To further highlight this point, the map below shows the states where Honduran migrants get deported by Mexican forces. It's fairly evident that most migrants are deported in states that border the Mexico-Guatemala border, while the rest get deported along the Gulf route or right before their entry into the United States in Tamaulipas. 
+
+```{r deportedmexico, warnings=FALSE}
+# Pull out where people deported from p34m
+
+honddev2016mex <- honddev2016mex[c('pais', 'p34e')]
+guatedev2016mex <- guatedev2016mex[c('pais', 'p34e')]
+elsdev2016mex <- elsdev2016mex[c('pais', 'p34e')]
+
+step1 <- smartbind(honddev2016mex, guatedev2016mex)
+final <- smartbind(step1, elsdev2016mex)
+rm(step1)
+
+# Group so that each row is a state, and % of people found from each country as columns
+
+ghond <- honddev2016mex %>%
+  filter(p34e < 40) %>%
+  add_tally() %>%
+  add_count(p34e) %>%
+  distinct(pais, p34e, nn, n)
+
+ghond$perchond <- ghond$nn / ghond$n
+
+ghond$p34e[ghond$p34e==2] <- "Baja California Sur"
+ghond$p34e[ghond$p34e==3] <- "Baja California"
+ghond$p34e[ghond$p34e==5] <- "Coahuila"
+ghond$p34e[ghond$p34e==6] <- "Chihuahua"
+ghond$p34e[ghond$p34e==7] <- "Chiapas"
+ghond$p34e[ghond$p34e==8] <- "Colima"
+
+ghond$p34e[ghond$p34e=="Baja California Sur"] <- 3
+ghond$p34e[ghond$p34e=="Baja California"] <- 2
+ghond$p34e[ghond$p34e=="Coahuila"] <- 7
+ghond$p34e[ghond$p34e=="Chihuahua"] <- 8
+ghond$p34e[ghond$p34e=="Chiapas"] <- 5
+ghond$p34e[ghond$p34e=="Colima"] <- 6
+
+gguate <- guatedev2016mex %>%
+  filter(p34e < 40) %>%
+  add_tally() %>%
+  add_count(p34e) %>%
+  distinct(pais, p34e, nn, n)
+
+gguate$percguate <- gguate$nn / gguate$n
+
+gels <- elsdev2016mex %>%
+  filter(p34e < 40) %>%
+  add_tally() %>%
+  add_count(p34e) %>%
+  distinct(pais, p34e, nn, n)
+
+gels$percels <- gels$nn / gels$n
+
+# Map
+
+to_map_hond <- geo_join(mex_shape, ghond, by_sp = 'ID_1', by_df='p34e', how='left')
+to_map_hond[is.na(to_map_hond)] <- 0
+
+
+labels <- labs(title = 'The majority of Honduran migrants get deported \n on the southern border or along the Gulf',
+               subtitle = 'The states where most migrants get deported from are along the traditional migrant route \n which traverses Chiapas, Tabasco, Veracruz, and Tamaulipas',
+               caption = 'Source: EMIF, 2016')
+
+updated_theme <- theme(panel.border = element_blank()) +
+  theme(axis.title.y = element_blank()) +
+  theme(axis.text.y = element_blank()) +
+  theme(panel.grid.major.y = element_blank()) +
+  theme(panel.grid.minor.y = element_blank()) +
+  theme(axis.title.x = element_blank()) +
+  theme(panel.grid.major.x = element_blank()) +
+  theme(axis.text.x.top = element_text(size=12)) +
+  theme(axis.ticks = element_blank()) + 
+  theme(panel.background = element_blank())
+
+ggplot() +
+  geom_sf(data = to_map_hond) + 
+  geom_sf(data = to_map_hond, aes(fill=perchond)) +
+  scale_fill_gradient(low='#feebe2', high='#7a0177') + 
+  labels + mario_theme + updated_theme
+
+```
 
 In addition to deportation, Central American migrants working their way through Mexico face significant dangers. For that reason, academic experts and migrants rights advocates have often called for more investment in Northern Triangle countries to reduce violence, create more economic opportunity, and incentivize potential migrants to stay home. 
 
