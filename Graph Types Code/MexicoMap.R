@@ -78,6 +78,8 @@ gels <- elsdev2016mex %>%
 
 gels$percels <- gels$nn / gels$n
 
+ghond$p34e <- sapply(ghond$p34e, as.numeric)
+
 # Map
 
 to_map_hond <- geo_join(mex_shape, ghond, by_sp = 'ID_1', by_df='p34e', how='left')
