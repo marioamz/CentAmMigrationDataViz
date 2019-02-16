@@ -11,7 +11,7 @@ library(ggrepel)
 library(gghighlight)
 
 # Read Mexico Shapefile
-mex_shape <- st_read('Data/Mex_adm/Mex_adm1.shp')
+mex_shape <- st_read('Data/Mex_adm/Mex_adm2.shp')
 
 # Read in Deported from Mexico data
 path <- "Data/"
@@ -21,64 +21,57 @@ for(file in files)
   perpos <- which(strsplit(file, "")[[1]]==".")
   assign(
     gsub(" ","",substr(file, 1, perpos-1)), 
-    read.csv(paste(path,file,sep="")))
+    read.csv(paste(path,file,sep=""), stringsAsFactors = FALSE))
 }
 
 elsdev2016mex$pais <- 'El Salvador'
 honddev2016mex$pais <- 'Honduras'
 guatedev2016mex$pais <- 'Guatemala'
 
+values <- read.csv('Values/Els_Valores.csv')
+values_city <- values %>%
+  filter(Variable == 'p34m')
+values_state <- values %>%
+  filter(Variable == 'p34e')
 # Pull out where people deported from p34m
 
-honddev2016mex <- honddev2016mex[c('pais', 'p34e')]
-guatedev2016mex <- guatedev2016mex[c('pais', 'p34e')]
-elsdev2016mex <- elsdev2016mex[c('pais', 'p34e')]
-
-step1 <- smartbind(honddev2016mex, guatedev2016mex)
-final <- smartbind(step1, elsdev2016mex)
-rm(step1)
+honddev2016mex <- honddev2016mex[c('pais', 'p34m', 'p34e')]
+guatedev2016mex <- guatedev2016mex[c('pais', 'p34m', 'p34e')]
+elsdev2016mex <- elsdev2016mex[c('pais', 'p34m', 'p34e')]
 
 # Group so that each row is a state, and % of people found from each country as columns
 
 ghond <- honddev2016mex %>%
-  filter(p34e < 40) %>%
+  filter(p34m > 0 & p34m < 40000) %>%
   add_tally() %>%
-  add_count(p34e) %>%
-  distinct(pais, p34e, nn, n)
-
-ghond$perchond <- ghond$nn / ghond$n
-
-ghond$p34e[ghond$p34e==2] <- "Baja California Sur"
-ghond$p34e[ghond$p34e==3] <- "Baja California"
-ghond$p34e[ghond$p34e==5] <- "Coahuila"
-ghond$p34e[ghond$p34e==6] <- "Chihuahua"
-ghond$p34e[ghond$p34e==7] <- "Chiapas"
-ghond$p34e[ghond$p34e==8] <- "Colima"
-
-ghond$p34e[ghond$p34e=="Baja California Sur"] <- 3
-ghond$p34e[ghond$p34e=="Baja California"] <- 2
-ghond$p34e[ghond$p34e=="Coahuila"] <- 7
-ghond$p34e[ghond$p34e=="Chihuahua"] <- 8
-ghond$p34e[ghond$p34e=="Chiapas"] <- 5
-ghond$p34e[ghond$p34e=="Colima"] <- 6
+  add_count(p34m) %>%
+  distinct(pais, p34m, p34e, nn, n)
 
 gguate <- guatedev2016mex %>%
-  filter(p34e < 40) %>%
+  filter(p34m > 0 & p34m < 40000) %>%
   add_tally() %>%
-  add_count(p34e) %>%
-  distinct(pais, p34e, nn, n)
-
-gguate$percguate <- gguate$nn / gguate$n
+  add_count(p34m) %>%
+  distinct(pais, p34m, p34e, nn, n)
 
 gels <- elsdev2016mex %>%
-  filter(p34e < 40) %>%
+  filter(p34m > 0 & p34m < 40000) %>%
   add_tally() %>%
-  add_count(p34e) %>%
-  distinct(pais, p34e, nn, n)
+  add_count(p34m) %>%
+  distinct(pais, p34m, p34e, nn, n)
 
-gels$percels <- gels$nn / gels$n
+final <- do.call("rbind", list(gels, gguate, ghond))
 
-ghond$p34e <- sapply(ghond$p34e, as.numeric)
+final <- merge(final, values_city, by.x='p34m', by.y='Valor')
+final <- merge(final, values_state, by.x='p34e', by.y = 'Valor')
+
+final <- data.frame(lapply(final, as.character), stringsAsFactors=FALSE)
+mex_shape <- mex_shape %>% mutate_if(is.factor, as.character)
+
+install.packages('fuzzyjoin')
+library(fuzzyjoin)
+
+joined <- final %>%
+  stringdist_inner_join(mex_shape, by=c(Descripción.x='NAME_2', Descripción.y='NAME_1'), max_dist=1)
 
 # Map
 
