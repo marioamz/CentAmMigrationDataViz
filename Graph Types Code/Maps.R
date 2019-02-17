@@ -100,8 +100,12 @@ diff <- emigrate %>%
 
 colnames(diff)[colnames(diff)==2016] <- "perc2016"
 
-to_map_hond <- geo_join(honduras_shape, diff, by_sp = 'NAME_1', by_df='prov', how='left')
-#to_map_guate <- geo_join(guate_shape, diff_use, by_sp='NAME_1', by_df='prov', how='left')
+diff_use <- diff[36:53,]
+
+to_map_hond <- honduras_shape %>%
+  stringdist_inner_join(diff_use, by=c(NAME_1='prov'), max_dist=1)
+to_map_hond <- geo_join(honduras_shape, diff_use, by_sp = 'NAME_1', by_df='prov', how='left')
+#to_map_guate <- geo_join(guate_shape, diff, by_sp='NAME_1', by_df='prov', how='left')
 #to_map_els <- geo_join(els_shape, diff_use, by_sp='NAME_1', by_df='prov', how='left')
 
 mario_theme <- theme(text = element_text(family='Georgia'),

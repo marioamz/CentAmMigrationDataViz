@@ -186,7 +186,7 @@ els_shape <- st_read('Data/gadm36_SLV_shp/gadm36_SLV_1.shp')
 ## READ IN FOR MEXICO MAP
 
 # Read Mexico Shapefile
-mex_shape <- st_read('Data/Mex_adm/Mex_adm2.shp')
+mex_shape <- st_read('Data/Mex_adm/Mex_adm0.shp')
 
 # Read in Deported from Mexico data
 path <- "Data/"
@@ -258,7 +258,8 @@ update_theme <- theme(axis.title.x = element_blank(),
                       axis.title.y = element_blank(),
                       panel.grid = element_blank(), 
                       axis.ticks = element_blank(),
-                      panel.background = element_blank())
+                      panel.background = element_blank(),
+                      legend.position = 'none')
 
 plot + labels + mario_theme + update_theme
 
@@ -331,7 +332,10 @@ diff <- emigrate %>%
 
 colnames(diff)[colnames(diff)==2016] <- "perc2016"
 
-to_map_hond <- geo_join(honduras_shape, diff, by_sp = 'NAME_1', by_df='prov', how='left')
+diff_use <- diff[36:53,]
+
+to_map_hond <- honduras_shape %>%
+  stringdist_inner_join(diff_use, by=c(NAME_1='prov'), max_dist=1)
 #to_map_guate <- geo_join(guate_shape, diff_use, by_sp='NAME_1', by_df='prov', how='left')
 #to_map_els <- geo_join(els_shape, diff_use, by_sp='NAME_1', by_df='prov', how='left')
 
@@ -343,6 +347,7 @@ caption = 'Source: LAPOP Honduras, 2010-2016')
 updated_theme <- theme(panel.border = element_blank()) +
   theme(axis.title.y = element_blank()) +
   theme(axis.text.y = element_blank()) +
+  theme(axis.text.x = element_blank()) +
   theme(panel.grid.major.y = element_blank()) +
   theme(panel.grid.minor.y = element_blank()) +
   theme(axis.title.x = element_blank()) +
@@ -354,7 +359,6 @@ updated_theme <- theme(panel.border = element_blank()) +
 ggplot() +
   geom_sf(data = to_map_hond) + 
   geom_sf(data = to_map_hond, aes(fill=perc2016)) +
-  #gghighlight(perc2016 > 40) + 
   mario_scale_cont + 
   labels + mario_theme + updated_theme
 
@@ -427,9 +431,10 @@ labels <- labs(title = "Most Honduran provinces saw increases in \n respondents 
                subtitle = "Out of 18 provinces, three experienced a 30% or greater increase \nin respondents planning to emigrate in the next three years.",
                caption = 'Source: LAPOP data 2010-2016') 
 
-diff_use %>%
-  arrange(change) %>%
-  ggplot( aes(x=prov, y=change)) +
+diff_use <- diff_use %>%
+  arrange(desc(change))
+
+ggplot(diff_use, aes(x=prov, y=change)) +
   geom_segment( aes(x=prov, xend=prov, y=0, yend=change), color="grey", size=1) +
   geom_point( color="grey", size=4, alpha=0.6) +
   geom_segment(data=highlight, aes(x=prov, xend=prov, y=0, yend=change), color = '#df65b0') +
@@ -449,92 +454,214 @@ While the vast majority of Honduran provinces have seen increases in people plan
 Media outlets and researchers often cite a range of push and pull factors driving this emigration. Generally speaking, violence and lack of economic opportunity are cited as two prominent push factors; while family reunification is often cited as a pull factor. 
 
 ```{r drivers, warning=FALSE}
-## This graph will show perceptions in violence and economic opportunity
-## relative to answers on willingness to emigrate in the next 3 years for 2017
 
-hond2017 <- subset(hondLAPOP, year==2016)
+hond2016 <- hondLAPOP %>%
+  filter(year == 2016)
 
-# Calculate the percent of people in each province who said they felt
-# "Very unsafe" in the community
+## Subset to have just the variables we care about
 
-unsafe <- hond2017 %>%
-  select(year, prov, aoj11) %>%
-  group_by(year, prov) %>%
+touse <- hond2016 %>%
+  select(q14, ur, q1, q2, idio2, it1, l1, aoj11, aoj17, aoj12, ed) %>%
+  na.omit() 
+
+## Create bins
+### For age, 1 is less than 35 and 2 is greater than 35
+touse$q2 <- cut(touse$q2, breaks = c(0, 35, Inf), include.lowest=TRUE, labels=c(1, 2))
+### For personal economic situation, 1 is worse off than before, 2 is better off
+touse$idio2 <- cut(touse$idio2, breaks=c(0, 2, Inf), include.lowest=TRUE, labels=c(2,1))
+### For thinking the neighborhood is unsafe, 1 is unsafe and 2 is not
+touse$it1 <- cut(touse$it1, breaks=c(0, 2, Inf), include.lowest=TRUE, labels=c(2,1))
+### For political leaning, 1 is right wing and 2 is moderate or left wing
+touse$l1 <- cut(touse$l1, breaks=c(0, 5, Inf), include.lowest=TRUE, labels=c(2,1))
+### For confidence in judicial system if robbed, 1 is not confident, 2 is confident
+touse$aoj12 <- cut(touse$aoj12, breaks=c(0, 2, Inf), include.lowest=TRUE, labels=c(2,1))
+### For those who finished elementary school, 1 is not finished, 2 is finished
+touse$ed <- cut(touse$ed, breaks=c(0, 6, Inf), include.lowest=TRUE, labels=c(1,2))
+### Rural is 1, urban is 2
+touse$ur<-as.numeric(touse$ur) 
+
+## Let's get percentages of all 
+percs <- touse %>%
+  group_by(q14) %>%
   add_tally() %>%
-  add_count(aoj11)
+  add_count(q2) 
+percs$age <- (percs$nn / percs$n) * 100
 
-# Calculate the percent of people in each province who said their economic
-# situation has worsnened in the last 12 months
+percs <- percs %>%
+  select (-c(n, nn)) %>%
+  group_by(q14) %>%
+  add_tally() %>%
+  add_count(ur)
+percs$rural <- (percs$nn / percs$n) * 100
 
-econ <- hond2017 %>%
-  select(year, prov, idio2) %>%
-  group_by(year, prov) %>%
+percs <- percs %>%
+  select (-c(n, nn)) %>%
+  group_by(q14) %>%
+  add_tally() %>%
+  add_count(q1)
+percs$gender <- (percs$nn / percs$n) * 100
+
+percs <- percs %>%
+  select (-c(n, nn)) %>%
+  group_by(q14) %>%
   add_tally() %>%
   add_count(idio2)
+percs$econ <- (percs$nn / percs$n) * 100
 
-# Calculate the percent of people in each province who want to emigrate
-# in the next 3 years
-
-emigrate <- hond2017 %>%
-  select(year, prov, q14) %>%
-  group_by(year, prov) %>%
+percs <- percs %>%
+  select (-c(n, nn)) %>%
+  group_by(q14) %>%
   add_tally() %>%
-  add_count(q14)
+  add_count(it1)
+percs$hood <- (percs$nn / percs$n) * 100
 
-# Group by and replace those provinces that don't have those values with zero
-# percent
+percs <- percs %>%
+  select (-c(n, nn)) %>%
+  group_by(q14) %>%
+  add_tally() %>%
+  add_count(l1)
+percs$politics <- (percs$nn / percs$n) * 100
 
-emigrate$perc_emigrate <- (emigrate$nn / emigrate$n) * 100
-unsafe$perc_aoj11 <- (unsafe$nn / unsafe$n) * 100
-econ$perc_idio2 <- (econ$nn / econ$n) * 100
+percs <- percs %>%
+  select (-c(n, nn)) %>%
+  group_by(q14) %>%
+  add_tally() %>%
+  add_count(aoj12)
+percs$justice <- (percs$nn / percs$n) * 100
 
-emigrate.na <- na.omit(emigrate)
-unsafe.na <- na.omit(unsafe)
-econ.na <- na.omit(econ)
-
-to_plot_emigrate <- emigrate.na %>%
-  select(year, prov, perc_emigrate, q14) %>%
-  group_by(year, prov) %>%
-  arrange(q14) %>%
-  slice(1)
-
-to_plot_econ <- econ.na %>%
-  select(year, prov, perc_idio2, idio2) %>%
-  group_by(year, prov) %>%
-  arrange(desc(idio2)) %>%    
-  slice(1)
-
-to_plot_unsafe <- unsafe.na %>%
-  select(year, prov, perc_aoj11, aoj11) %>%
-  group_by(year, prov) %>%
-  arrange(desc(aoj11)) %>%    
-  slice(1)
-
-to_plot_final <- merge(to_plot_econ, to_plot_unsafe, by = c("year", "prov"))
-to_plot_final <- merge(to_plot_final, to_plot_emigrate, by = c("year", "prov"))
-to_plot_f <- to_plot_final %>% mutate(perc_aoj11 = ifelse(aoj11 != 4, 0, perc_aoj11))
-to_plot_ff <- to_plot_f %>% mutate(perc_idio2 = ifelse(idio2 != 3, 0, perc_idio2))
-
-rm(to_plot_final, to_plot_f, to_plot_econ, to_plot_unsafe, emigrate, unsafe, econ, unsafe.na, econ.na, emigrate.na, hond2017, to_plot_emigrate)                                   
-
-# Plot
+percs <- percs %>%
+  select (-c(n, nn)) %>%
+  group_by(q14) %>%
+  add_tally() %>%
+  add_count(ed)
+percs$education <- (percs$nn / percs$n) * 100
 
 
-plot <- ggplot(to_plot_ff, 
-               aes(y = perc_aoj11, x = perc_idio2, color = perc_emigrate)) + geom_point() +          
-  geom_text_repel(aes(label=prov)) + scale_color_distiller(name = '% planning to emigrate', palette='RdPu', trans='reverse') #+ 
-  #scale_y_continuous(limits = c(0, 60)) + expand_limits(x=0)
+## Pull out only those who answered 1 per question
 
-labels <- labs(title = "In Honduran provinces with largest percentage \n of people planning to emigrate, \n economic concerns prevail",
-            subtitle = "Economics might be playing a larger push role than violence",
-            caption = "Source: LAPOP Honduras data 2017", 
-            x = "% who feel economic prospects have worsened", y = "% who feel very unsafe from crime",
-            fill='Province') 
+rural <- percs %>%
+  group_by(q14) %>%
+  distinct(q14, ur, rural) %>%
+  slice(1) %>%
+  select(q14, rural)
+
+age <- percs %>%
+  group_by(q14) %>%
+  distinct(q14, q2, age) %>%
+  arrange(q2) %>%
+  slice(1) %>%
+  select(q14, age)
+
+econ <- percs %>%
+  group_by(q14) %>%
+  distinct(q14, idio2, econ) %>%
+  arrange(desc(idio2)) %>%
+  slice(1) %>%
+  select(q14, econ)
+
+politics <- percs %>%
+  group_by(q14) %>%
+  distinct(q14, l1, politics) %>%
+  arrange(desc(l1)) %>%
+  slice(1) %>%
+  select(q14, politics)
+
+neighborhood <- percs %>%
+  group_by(q14) %>%
+  distinct(q14, it1, hood) %>%
+  arrange(desc(it1)) %>%
+  slice(1) %>%
+  select(q14, hood)
+
+confidence <- percs %>%
+  group_by(q14) %>%
+  distinct(q14, aoj12, justice) %>%
+  arrange(desc(aoj12)) %>%
+  slice(1) %>%
+  select(q14, justice)
+
+elementary <- percs %>%
+  group_by(q14) %>%
+  distinct(q14, ed, education) %>%
+  arrange(ed) %>%
+  slice(1) %>%
+  select(q14, education)
 
 
-plot + labels + mario_theme 
 
-rm(to_plot_ff, plot)
+percentages <- list(age, confidence, econ, elementary, neighborhood, politics, rural) %>%
+  reduce(left_join, by='q14')
+
+percentages <- as.data.frame(t(percentages))
+colnames(percentages) = percentages[1, ] # the first row will be the header
+percentages = percentages[-1, ]   
+names(percentages) <- c("emigrate", "not_emigrate")
+percentages <- cbind(answers = rownames(percentages), percentages)
+rownames(percentages) <- 1:nrow(percentages)
+
+percentages <- percentages %>%
+  mutate(change = emigrate - not_emigrate) %>%
+  arrange(desc(change))
+  
+
+emigratepos <- percentages %>%
+  filter(change > 0) %>%
+  arrange(desc(change))
+
+emigrateneg <- percentages %>%
+  filter(change < 0) %>%
+  arrange(desc(change))
+
+percentages$answers <- factor(percentages$answers, levels = percentages$answers[order(percentages$change)])
+
+colors <- c('c1' = '#67001f', 'c2' = '#df65b0')
+# Actually plot
+
+plot <- ggplot(percentages, aes(emigrate, answers)) +
+  geom_point(data = emigratepos, aes(emigrate),color = '#67001f', size =4) + 
+  geom_point(data = emigrateneg, aes(emigrate), color = '#67001f', size =4) + 
+  geom_point(data = emigratepos, aes(not_emigrate), color = '#df65b0', size=4) +
+  geom_point(data = emigrateneg, aes(not_emigrate), color = '#df65b0', size=4) +
+  geom_text(data = emigratepos, aes(label=paste0(round(emigrate, 0), '%')), color = '#67001f', hjust = -1, size = 3,
+            position = position_dodge(width = 1),
+            inherit.aes = TRUE) +
+  geom_text(data = emigrateneg, aes(label=paste0(round(emigrate, 0), '%')), color = '#67001f', hjust = 2, size = 3,
+            position = position_dodge(width = 1),
+            inherit.aes = TRUE) +
+  geom_segment(data = emigratepos, aes(x=emigrate, xend=not_emigrate, y=answers, yend=answers), color = '#67001f', size=1) + 
+  geom_segment(data = emigrateneg, aes(x=emigrate, xend=not_emigrate, y=answers, yend=answers), color = '#df65b0', size=1) +
+  expand_limits(x=0) +
+  geom_text(data = emigratepos, aes(x = not_emigrate, y= answers, label=paste0(round(not_emigrate, 0), '%')), color = '#df65b0', hjust = 1.5, size = 3,
+            position = position_dodge(width = 1)) +
+  geom_text(data = emigrateneg, aes(x = not_emigrate, y=answers, label=paste0(round(not_emigrate, 0), '%')), color = '#df65b0', hjust = -1.25, size = 3,
+            position = position_dodge(width = 1)) +
+  scale_y_discrete(labels = c('% who are younger than 35',
+                              '% who do not trust neighbors', 
+                              '% whose economic situation has gotten worse in last year', 
+                              '% who do not trust the justice system to prosecute a robbery',
+                              '% who live in rural communities',
+                              '% who self-identify as conservative', 
+                              '% who did not complete elementary school')) +
+  scale_color_manual(name="Hondurans", 
+                     breaks=c('c1', 'c2'), 
+                     values = colors,
+                     labels = c('Planning to Emigrate', 'Not Planning to Emigrate'))
+
+labels <- labs(title = "Hondurans planning to emigrate (dark purple) are more \n likely report living in unsafe, gang-filled neighborhoods \n than those who don't (light purple)",
+     subtitle = "Surprisingy, those who plan to emigrate are more likely to have finished elementary school, live in a city, be younger, \n and be less politically conservative than those who don't.") 
+
+update_themes <- 
+  theme(axis.title = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.caption = element_blank())
+
+plot + labels  + mario_theme + update_themes
+
 ```
 
 However, as the graph above shows, it appears that in Honduras -- the country that's seen the largest increases in its citizens planning to emigrate -- a lack of economic opportunity is driving emigration. In the Honduran states where more than 40% of survey respondents plan to emigrate in the next three years, it's clear that more respondents feel their economic prospects have worsened. In the state of Colón for instance, more than 50% of the population wants to emigrate, more than 50% feel that their economic prospects have worsened, and only 20% feel that their neighborhood is very unsafe from crime. 
@@ -563,7 +690,7 @@ plot <- ggplot(data = tograph, aes(x = year, y = mean_spent, group = pais)) +
                   size = 3.5, 
                   nudge_x = -0.25, 
                   direction = "y") + 
-  geom_label(aes(label = paste0("$", mean_spent)), 
+  geom_label_repel(aes(label = paste0("$", mean_spent)), 
              size = 3, 
              label.padding = unit(0.05, "lines"), 
              label.size = 0.0) 
