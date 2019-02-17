@@ -82,6 +82,7 @@ geocodes <- geocode(as.character(final$geocode))
 final <- data.frame(final,geocodes)
 final$perc = (final$nn / final$n) * 100
 
+
 highlight <- final %>%
   filter(perc > 1.5)
 
@@ -94,16 +95,6 @@ to_map <- st_simplify(joined)
 to_mapa_laea <- st_transform(to_map, 6372)
 
 # Map
-
-mario_theme <- theme(text = element_text(family='Georgia'),
-                     plot.title = element_text(size = 20, margin = margin(b = 10)),
-                     plot.subtitle = element_text(size = 10, color = "darkslategrey", margin = margin(b = 25)), 
-                     axis.title.x = element_text(color='darkslategrey', size=8),
-                     axis.title.y = element_text(color='darkslategrey', size=8), 
-                     plot.caption = element_text(size = 8, margin = margin(t = 10), color = "grey70", hjust = 0),
-                     legend.title = element_text(face='bold', size=8),
-                     legend.position = 'bottom', legend.direction = 'horizontal', legend.box = 'horizontal', 
-                     legend.key.size = unit(0.5, 'cm'))
 
 labels <- labs(title = 'The majority of Honduran migrants get deported \n on the southern border or along the Gulf',
                subtitle = 'The states where most migrants get deported from are along the traditional migrant route \n which traverses Chiapas, Tabasco, Veracruz, and Tamaulipas',
@@ -120,13 +111,6 @@ updated_theme <- theme(panel.border = element_blank()) +
   theme(axis.text.x.top = element_text(size=12)) +
   theme(axis.ticks = element_blank()) + 
   theme(panel.background = element_blank())
-
-p <- ggplot(final, aes(x = lon, y = lat, size = perc, colour=pais)) +
-  geom_sf(data = to_mapa_laea) +
-  geom_point(data = to_mapa_laea, aes(x=))
-  geom_sf(data = joined, aes(fill=perchond)) +
-  scale_fill_gradient(low='#feebe2', high='#7a0177') + 
-  labels + mario_theme + updated_theme
 
 p <- ggplot() +
   geom_sf(data=to_mapa_laea)

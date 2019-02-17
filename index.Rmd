@@ -21,6 +21,11 @@ install.packages('gghighlight')
 install.packages('ggalluvial')
 install.packages('sf')
 install.packages('tigris')
+install.packages('fuzzyjoin')
+install.packages('ggmap')
+install.packages('gganimate')
+install.packages('gifski')
+install.packages('ggrepel')
 
 library(tigris)
 library(sf)
@@ -31,6 +36,10 @@ library(gghighlight)
 library(gtools)
 library(tidyverse)
 library(dplyr)
+library(gifski)
+library(gganimate)
+library(ggmap)
+library(fuzzyjoin)
 ```
 ```{r dataloads, include=FALSE}
 # READING IN FOR BAR, LINE, AND BUBBLE GRAPHS
@@ -174,7 +183,7 @@ els_shape <- st_read('Data/gadm36_SLV_shp/gadm36_SLV_1.shp')
 ## READ IN FOR MEXICO MAP
 
 # Read Mexico Shapefile
-mex_shape <- st_read('Data/Mex_adm/Mex_adm1.shp')
+mex_shape <- st_read('Data/Mex_adm/Mex_adm2.shp')
 
 # Read in Deported from Mexico data
 path <- "Data/"
@@ -190,6 +199,9 @@ for(file in files)
 elsdev2016mex$pais <- 'El Salvador'
 honddev2016mex$pais <- 'Honduras'
 guatedev2016mex$pais <- 'Guatemala'
+
+### READ IN GEOCODED DATA
+geocoded <- read.csv('Data/geocoded.csv')
 
 ```
 ```{r themes, include=FALSE}
