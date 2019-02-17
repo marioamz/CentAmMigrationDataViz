@@ -16,11 +16,8 @@ library(dplyr)
 library(tidyverse)
 library(tigris)
 library(gtools)
-library(ggrepel)
 library(gghighlight)
 library(ggrepel)
-
-register_google(key = 'AIzaSyDpJ8ReOhdq2KYCyab-q2NfAwxDDIKNp6U', write=TRUE)
 
 # Read Mexico Shapefile
 mex_shape <- st_read('Data/Mex_adm/Mex_adm2.shp')
