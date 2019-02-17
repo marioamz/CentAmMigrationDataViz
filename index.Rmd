@@ -1,7 +1,7 @@
 ---
 title: "The Changing Dynamics of Central American Migration"
 author: "Mario Moreno"
-date: "2/3/2019"
+date: "2/17/2019"
 output:
   html_document:
     code_folding: hide
@@ -186,7 +186,7 @@ els_shape <- st_read('Data/gadm36_SLV_shp/gadm36_SLV_1.shp')
 ## READ IN FOR MEXICO MAP
 
 # Read Mexico Shapefile
-mex_shape <- st_read('Data/Mex_adm/Mex_adm0.shp')
+mex_shape <- st_read('Data/Mex_adm/Mex_adm1.shp')
 
 # Read in Deported from Mexico data
 path <- "Data/"
@@ -340,7 +340,7 @@ to_map_hond <- honduras_shape %>%
 #to_map_els <- geo_join(els_shape, diff_use, by_sp='NAME_1', by_df='prov', how='left')
 
 
-labels <- labs(title = 'During 2016, more residents in northeastern Honduran \n provinces planned to emigrate than anywhere else',
+labels <- labs(title = 'In 2016, more residents in northeastern \n Honduran provinces planned to emigrate \n than anywhere else',
 subtitle = 'In the northeastern provinces of Colón and Gracias a Dios more than 50% of \n respondents indicated plans to emigrate in the next three years',
 caption = 'Source: LAPOP Honduras, 2010-2016')
 
@@ -358,9 +358,9 @@ updated_theme <- theme(panel.border = element_blank()) +
 
 ggplot() +
   geom_sf(data = to_map_hond) + 
-  geom_sf(data = to_map_hond, aes(fill=perc2016)) +
+  geom_sf(data = to_map_hond, aes(fill=perc2016)) + 
   mario_scale_cont + 
-  labels + mario_theme + updated_theme
+  labels + mario_theme + updated_theme 
 
 ```
 
@@ -440,7 +440,7 @@ ggplot(diff_use, aes(x=prov, y=change)) +
   geom_segment(data=highlight, aes(x=prov, xend=prov, y=0, yend=change), color = '#df65b0') +
   geom_point(data=highlight, size=4, color = '#67001f') +
   geom_text(data = highlight, aes(label = paste0('+', round(change, 0))),
-            size = 3, hjust = -.5, color = '#67001f')  +
+            size = 3, hjust = -.35, color = '#67001f')  +
   coord_flip() +
   xlab("") +
   ylab("Percent Change from 2010 to 2016") + labels + theme_minimal() + mario_theme +  theme(panel.grid.major.x = element_blank(),
@@ -622,23 +622,23 @@ plot <- ggplot(percentages, aes(emigrate, answers)) +
   geom_point(data = emigrateneg, aes(emigrate), color = '#67001f', size =4) + 
   geom_point(data = emigratepos, aes(not_emigrate), color = '#df65b0', size=4) +
   geom_point(data = emigrateneg, aes(not_emigrate), color = '#df65b0', size=4) +
-  geom_text(data = emigratepos, aes(label=paste0(round(emigrate, 0), '%')), color = '#67001f', hjust = -1, size = 3,
+  geom_text(data = emigratepos, aes(label=paste0(round(emigrate, 0), '%')), color = '#67001f', hjust = -.5, size = 3,
             position = position_dodge(width = 1),
             inherit.aes = TRUE) +
-  geom_text(data = emigrateneg, aes(label=paste0(round(emigrate, 0), '%')), color = '#67001f', hjust = 2, size = 3,
+  geom_text(data = emigrateneg, aes(label=paste0(round(emigrate, 0), '%')), color = '#67001f', hjust = 1.5, size = 3,
             position = position_dodge(width = 1),
             inherit.aes = TRUE) +
   geom_segment(data = emigratepos, aes(x=emigrate, xend=not_emigrate, y=answers, yend=answers), color = '#67001f', size=1) + 
   geom_segment(data = emigrateneg, aes(x=emigrate, xend=not_emigrate, y=answers, yend=answers), color = '#df65b0', size=1) +
-  expand_limits(x=0) +
   geom_text(data = emigratepos, aes(x = not_emigrate, y= answers, label=paste0(round(not_emigrate, 0), '%')), color = '#df65b0', hjust = 1.5, size = 3,
             position = position_dodge(width = 1)) +
+  expand_limits(x=c(20,80)) +
   geom_text(data = emigrateneg, aes(x = not_emigrate, y=answers, label=paste0(round(not_emigrate, 0), '%')), color = '#df65b0', hjust = -1.25, size = 3,
             position = position_dodge(width = 1)) +
   scale_y_discrete(labels = c('% who are younger than 35',
                               '% who do not trust neighbors', 
-                              '% whose economic situation has gotten worse in last year', 
-                              '% who do not trust the justice system to prosecute a robbery',
+                              '% whose economic situation has gotten worse', 
+                              '% who dont trust the justice system',
                               '% who live in rural communities',
                               '% who self-identify as conservative', 
                               '% who did not complete elementary school')) +
@@ -647,8 +647,9 @@ plot <- ggplot(percentages, aes(emigrate, answers)) +
                      values = colors,
                      labels = c('Planning to Emigrate', 'Not Planning to Emigrate'))
 
-labels <- labs(title = "Hondurans planning to emigrate (dark purple) are more \n likely report living in unsafe, gang-filled neighborhoods \n than those who don't (light purple)",
-     subtitle = "Surprisingy, those who plan to emigrate are more likely to have finished elementary school, live in a city, be younger, \n and be less politically conservative than those who don't.") 
+labels <- labs(title = "Hondurans planning to emigrate \n (dark purple) are more likely to \n report living in unsafe, gang-filled \n neighborhoods than those who \n don't (light purple)",
+     subtitle = "Surprisingy, those who plan to emigrate are more likely to \n flhave finished elementary school, live in a city, be younger, \n and be less politically conservative than those who don't.",
+     caption = 'Source: LAPOP 2016') 
 
 update_themes <- 
   theme(axis.title = element_blank(),
@@ -664,7 +665,7 @@ plot + labels  + mario_theme + update_themes
 
 ```
 
-However, as the graph above shows, it appears that in Honduras -- the country that's seen the largest increases in its citizens planning to emigrate -- a lack of economic opportunity is driving emigration. In the Honduran states where more than 40% of survey respondents plan to emigrate in the next three years, it's clear that more respondents feel their economic prospects have worsened. In the state of Colón for instance, more than 50% of the population wants to emigrate, more than 50% feel that their economic prospects have worsened, and only 20% feel that their neighborhood is very unsafe from crime. 
+However, as the graph above shows, it appears that in Honduras -- the country that's seen the largest increases in its citizens planning to emigrate -- there are a range of factors that might be driving emigration. Honduran residents planning to emigrate tend to be younger, more liberal, and urban dwellers that those who don't. They also tend to cite violence as an issue in their lives moreso than people planning to stay, while also citing economic concerns at a lesser rate. This indicates that violence might be the biggest push factor in Honduras currently.
 
 Even as it appears that Honduran migrants are fleeing poverty more than violence, they face additional economic burdens as they try to make it to the United States. Often, in order to secure a safe passage from the Guatemala-Mexico border to the US-Mexico border, these migrants will secure the assistance of 'coyotes,' members of criminal organizations that guide them in their journey. 
 
@@ -827,16 +828,21 @@ touse$p26[touse$p26 == 0] <- 'Deported Prior'
 touse$p26[touse$p26 == 280320001] <- 'Reynosa, TAMPS'
 touse$p26[touse$p26 == 280270001] <- 'N. Laredo, TAMPS'
 
+touse$p26 <- as.factor(touse$p26)
+fct_rev(touse$p26)
+
+touse$p24l <- as.factor(touse$p24l)
+
 colnames(touse)[colnames(touse)=="p15"] <- "entry"
 
 
 plot <- ggplot(touse,
        aes(y = Freq,
-           axis1 = entry, axis2 = p22_1l, axis3 = p24l, axis4 = p26)) +   scale_fill_brewer(type='qual', palette = "Set1") +
+           axis1 = entry, axis2 = p22_1l, axis3 = p24l)) +   scale_fill_brewer(type='qual', palette = "Set1") +
   geom_flow(aes(fill = deported, alpha = entry, colour = deported), stat = "alluvium", aes.bind = TRUE, reverse=TRUE, width = 0.1) +
   geom_stratum(width = 1/10, reverse = TRUE) +
   geom_text(stat = "stratum", label.strata = TRUE, reverse = TRUE) +
-  scale_x_continuous(breaks = 1:4, labels = c("Mexican Port of Entry", "Mexican City Visited", "Mexican City Where Spent Most Time" ,"US Port of Entry")) 
+  scale_x_continuous(breaks = 1:3, labels = c("Mexico Port", "Mexican City Visited", "US Port/Deported From")) 
 
 labels <- labs(
     title = "As they journey northward, Honduran migrants who \n get deported in Mexico get stuck in cities \n that border the Gulf of Mexico",
@@ -855,24 +861,24 @@ rm(touse)
 
 The graph above, which shows the paths that Honduran migrants take within Mexico, shows that there are some slight differences in the paths that deported migrants and non-deported migrants take. Namely, migrants entering Mexico through Bethel tend to all be deported, while migrants who make a stop in Chiapa de Corso tend to all make it to the US-Mexico border. Additionally, it seems that deported migrants tend to be caught in cities either near the Guatemala-Mexico border or on the Gulf of Mexico, while migrants that manage to make it safely through those cities often wind up making it to Reynosa, where they cross into the United States. 
 
-To further highlight this point, the map below shows the states where Honduran migrants get deported by Mexican forces. It's fairly evident that most migrants are deported in states that border the Mexico-Guatemala border, while the rest get deported along the Gulf route or right before their entry into the United States in Tamaulipas. 
+To further highlight this point, the map below shows the states where Central American migrants get deported by Mexican forces. It's fairly evident that most Salvadorean and Guatemalan migrants are deported in states that border the Mexico-Guatemala border, while Honduran migrants tend to get deported on the Gulf of Mexico. 
 
 ```{r deportedmexicogif, warnings=FALSE}
 
 highlight <- geocoded %>%
-  filter(perc > 1.5)
+  filter(perc > 3)
 
-joined <- mex_shape %>%
-  stringdist_inner_join(geocoded, by=c(NAME_2='Descripción.x', NAME_1='Descripción.y'), max_dist=1)
+#joined <- mex_shape %>%
+#  stringdist_inner_join(geocoded, by=c(NAME_2='Descripción.x', NAME_1='Descripción.y'), max_dist=1)
 
-to_map <- st_simplify(joined)
+to_map <- st_simplify(mex_shape)
 
 to_mapa_laea <- st_transform(to_map, 6372)
 
 # Map
 
-labels <- labs(title = 'The majority of Honduran migrants get deported \n on the southern border or along the Gulf',
-               subtitle = 'The states where most migrants get deported from are along the traditional migrant route \n which traverses Chiapas, Tabasco, Veracruz, and Tamaulipas',
+labels <- labs(title = 'The majority of Honduran migrants get deported \n along the Gulf of Mexico',
+               subtitle = 'Guatemalan and El Salvadorean migrants tend to get deported \n on the Mexico-Guatemala border',
                caption = 'Source: EMIF, 2016')
 
 updated_theme <- theme(panel.border = element_blank()) +
@@ -888,10 +894,10 @@ updated_theme <- theme(panel.border = element_blank()) +
   theme(panel.background = element_blank())
 
 p <- ggplot() +
-  geom_sf(data=to_mapa_laea) +
-  geom_point(data = geocoded, aes(x = lon, y = lat, size = perc), color = 'grey') +
+  #geom_sf(data=to_mapa_laea) +
+  geom_point(data = geocoded, aes(x = lon, y = lat, size = perc), color = 'grey', show.legend = FALSE) +
   geom_point(data = highlight, aes(x = lon, y = lat, size = perc, colour=pais)) + 
-  geom_text_repel(data = highlight, aes(x= lon, y=lat, label = Descripción.x)) +
+  geom_text_repel(data = highlight, aes(x= lon, y=lat, label = Descripción.x)) + 
   mario_theme + labels + updated_theme
 
 p + transition_states(pais)
