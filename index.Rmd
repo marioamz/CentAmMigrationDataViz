@@ -26,7 +26,9 @@ install.packages('ggmap')
 install.packages('gganimate')
 install.packages('gifski')
 install.packages('ggrepel')
+install.packages('transformr')
 
+library(transformr)
 library(tigris)
 library(reshape2)
 library(sf)
@@ -617,7 +619,7 @@ usa_perc <- usa_g %>%
   select(sexo, pais, p18_1, p18_2, p18_6, p18_8, p18_9) 
 
 # Rename columns
-colnames(usa_perc)[colnames(usa_perc)=="p18_1"] <- "Extreme Cold"
+colnames(usa_perc)[colnames(usa_perc)=="p18_1"] <- "Cold"
 colnames(usa_perc)[colnames(usa_perc)=="p18_2"] <- "Lack of Food"
 colnames(usa_perc)[colnames(usa_perc)=="p18_6"] <- "Lost"
 colnames(usa_perc)[colnames(usa_perc)=="p18_8"] <- "Abandoned by Coyote"
@@ -637,7 +639,7 @@ labels <- labs(title='Honduran migrants are more likely \n to be robbed, while S
 subtitle='Hondurans pay more for coyotes, but are \n the only group likely to be abandoned by them or get lost',
 caption='Source: EMIF Sur(2014-2107)')
 
-plot + labels + mario_theme 
+plot + labels + mario_theme
 
 ```
 
@@ -759,8 +761,8 @@ updated_theme <- theme(panel.border = element_blank()) +
   theme(panel.background = element_blank())
 
 p <- ggplot() +
-  geom_sf(data=to_mapa_laea)
-  geom_point(data = final, aes(x = lon, y = lat, size = perc), color = 'grey') +
+  geom_sf(data=to_mapa_laea) +
+  geom_point(data = geocoded, aes(x = lon, y = lat, size = perc), color = 'grey') +
   geom_point(data = highlight, aes(x = lon, y = lat, size = perc, colour=pais)) + 
   geom_text_repel(data = highlight, aes(x= lon, y=lat, label = Descripción.x)) +
   mario_theme + labels + updated_theme
