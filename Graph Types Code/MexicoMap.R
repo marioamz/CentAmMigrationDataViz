@@ -1,6 +1,15 @@
 install.packages('sf')
 install.packages('tigris')
 install.packages('gghighlight')
+install.packages('fuzzyjoin')
+install.packages('ggmap')
+install.packages('gganimate')
+install.packages('gifski')
+install.packages('ggrepel')
+library(gifski)
+library(gganimate)
+library(ggmap)
+library(fuzzyjoin)
 library(sf)
 library(ggplot2)
 library(dplyr)
@@ -9,6 +18,9 @@ library(tigris)
 library(gtools)
 library(ggrepel)
 library(gghighlight)
+library(ggrepel)
+
+register_google(key = 'AIzaSyDpJ8ReOhdq2KYCyab-q2NfAwxDDIKNp6U', write=TRUE)
 
 # Read Mexico Shapefile
 mex_shape <- st_read('Data/Mex_adm/Mex_adm2.shp')
@@ -67,16 +79,24 @@ final <- merge(final, values_state, by.x='p34e', by.y = 'Valor')
 final <- data.frame(lapply(final, as.character), stringsAsFactors=FALSE)
 mex_shape <- mex_shape %>% mutate_if(is.factor, as.character)
 
-install.packages('fuzzyjoin')
-library(fuzzyjoin)
+final$geocode <- paste(final$Descripción.x,",",final$Descripción.y)
 
-joined <- final %>%
-  stringdist_inner_join(mex_shape, by=c(Descripción.x='NAME_2', Descripción.y='NAME_1'), max_dist=1)
+geocodes <- geocode(as.character(final$geocode))
+final <- data.frame(final,geocodes)
+final$perc = (final$nn / final$n) * 100
+
+highlight <- final %>%
+  filter(perc > 1.5)
+
+
+joined <- mex_shape %>%
+  stringdist_inner_join(final, by=c(NAME_2='Descripción.x', NAME_1='Descripción.y'), max_dist=1)
+
+to_map <- st_simplify(joined)
+
+to_mapa_laea <- st_transform(to_map, 6372)
 
 # Map
-
-to_map_hond <- geo_join(mex_shape, ghond, by_sp = 'ID_1', by_df='p34e', how='left')
-to_map_hond[is.na(to_map_hond)] <- 0
 
 mario_theme <- theme(text = element_text(family='Georgia'),
                      plot.title = element_text(size = 20, margin = margin(b = 10)),
@@ -95,6 +115,7 @@ labels <- labs(title = 'The majority of Honduran migrants get deported \n on the
 updated_theme <- theme(panel.border = element_blank()) +
   theme(axis.title.y = element_blank()) +
   theme(axis.text.y = element_blank()) +
+  theme(axis.text.x = element_blank()) +
   theme(panel.grid.major.y = element_blank()) +
   theme(panel.grid.minor.y = element_blank()) +
   theme(axis.title.x = element_blank()) +
@@ -103,9 +124,18 @@ updated_theme <- theme(panel.border = element_blank()) +
   theme(axis.ticks = element_blank()) + 
   theme(panel.background = element_blank())
 
-ggplot() +
-  geom_sf(data = to_map_hond) + 
-  geom_sf(data = to_map_hond, aes(fill=perchond)) +
+p <- ggplot(final, aes(x = lon, y = lat, size = perc, colour=pais)) +
+  geom_sf(data = to_mapa_laea) +
+  geom_point(data = to_mapa_laea, aes(x=))
+  geom_sf(data = joined, aes(fill=perchond)) +
   scale_fill_gradient(low='#feebe2', high='#7a0177') + 
   labels + mario_theme + updated_theme
 
+p <- ggplot() +
+  geom_sf(data=to_mapa_laea)
+  geom_point(data = final, aes(x = lon, y = lat, size = perc), color = 'grey') +
+  geom_point(data = highlight, aes(x = lon, y = lat, size = perc, colour=pais)) + 
+  geom_text_repel(data = highlight, aes(x= lon, y=lat, label = Descripción.x)) +
+  mario_theme + labels + updated_theme
+
+p + transition_states(pais)
