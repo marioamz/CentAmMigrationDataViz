@@ -189,13 +189,20 @@ plot <- ggplot(percentages, aes(emigrate, answers)) +
             position = position_dodge(width = 1)) +
   geom_text(data = emigrateneg, aes(x = not_emigrate, y=answers, label=paste0(round(not_emigrate, 0), '%')), color = '#df65b0', hjust = -1.25, size = 3,
             position = position_dodge(width = 1)) +
-  geom_label(data = emigratepos, aes(label=c('% who are younger than 35',
-                                             '% who do not trust neighbors', 
-                                             '% whose economic situation has gotten worse in last year', 
-                                             '% who do not trust the justice system to prosecute a robbery')), position=position_nudge(-35), colour = '#67001f', fontface = 'bold') +
-  geom_label(data = emigrateneg, aes(label=c('% who live in rural communities',
-                                             '% who self-identify as conservative', 
-                                             '% who did not complete elementary school ')), position=position_nudge(-30), colour = '#df65b0', fontface = 'bold') +
+  scale_y_discrete(labels = c('% who are younger than 35',
+                              '% who do not trust neighbors', 
+                              '% whose economic situation has gotten worse in last year', 
+                              '% who do not trust the justice system to prosecute a robbery',
+                              '% who live in rural communities',
+                              '% who self-identify as conservative', 
+                              '% who did not complete elementary school')) +
+  #geom_label(data = emigratepos, aes(label=c('% who are younger than 35',
+   #                                          '% who do not trust neighbors', 
+    #                                         '% whose economic situation has gotten worse in last year', 
+     #                                        '% who do not trust the justice system to prosecute a robbery')), position=position_nudge(-35), colour = '#67001f', fontface = 'bold') +
+  #geom_label(data = emigrateneg, aes(label=c('% who live in rural communities',
+                                         #    '% who self-identify as conservative', 
+                                          #   '% who did not complete elementary school ')), position=position_nudge(-30), colour = '#df65b0', fontface = 'bold') +
   scale_color_manual(name="Hondurans", 
                      breaks=c('c1', 'c2'), 
                      values = colors,
@@ -209,18 +216,10 @@ update_themes <-
         panel.grid.major.x = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
-        axis.text.y = element_blank(), 
-        axis.ticks = element_blank())
-
-mario_theme <- theme(text = element_text(family='Georgia'),
-                     plot.title = element_text(size = 20, margin = margin(b = 10)),
-                     plot.subtitle = element_text(size = 10, color = "darkslategrey", margin = margin(b = 25)), 
-                     #axis.title.x = element_text(color='darkslategrey', size=8),
-                     #axis.title.y = element_text(color='darkslategrey', size=8), 
-                     #plot.caption = element_text(size = 8, margin = margin(t = 10), color = "grey70", hjust = 0),
-                     #legend.title = element_text(face='bold', size=8),
-                     #legend.position = 'bottom', legend.direction = 'horizontal', legend.box = 'horizontal', 
-                     legend.key.size = unit(0.5, 'cm'))
+        axis.ticks = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.caption = element_blank())
 
 plot + labels  + mario_theme + update_themes
 
