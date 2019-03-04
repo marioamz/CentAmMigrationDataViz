@@ -168,10 +168,15 @@ def mapfronteras(df, fgua, fmex, country):
     '''
 
     if country == 'USA':
-        df['mex_port_geom'] = df['mex_port'].map(fgua)
-        df['us_entry_geom'] = df['us_entrynew'].map(fmex)
+        df['mex_port_lat'] = df['mex_port'].map(lambda x: fgua[x][0])
+        df['mex_port_long'] = df['mex_port'].map(lambda x: fgua[x][1])
+
+        df['us_entry_lat'] = df['us_entrynew'].map(lambda x: fmex[x][0])
+        df['us_entry_long'] = df['us_entrynew'].map(lambda x: fmex[x][1])
+
     else:
-        df['mex_port_geom'] = df['mex_port'].map(fgua)
+        df['mex_port_lat'] = df['mex_port'].map(lambda x: fgua[x][0])
+        df['mex_port_long'] = df['mex_port'].map(lambda x: fgua[x][1])
 
     return df
 
